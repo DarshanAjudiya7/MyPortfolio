@@ -5,18 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Darshan Ajudiya — Frontend Engineer</title>
-    <meta name="description" content="Darshan Ajudiya — Frontend Engineer & UI/UX Designer building fast, accessible, production-grade web applications with React, Node.js and modern tooling.">
+    <meta name="description"
+        content="Darshan Ajudiya — Frontend Engineer & UI/UX Designer building fast, accessible, production-grade web applications with React, Node.js and modern tooling.">
     <meta name="theme-color" content="#0B1220">
     <!-- Open Graph -->
     <meta property="og:type" content="website">
     <meta property="og:title" content="Darshan Ajudiya — Frontend Engineer">
-    <meta property="og:description" content="Portfolio of Darshan Ajudiya — Frontend Engineer specializing in React, Node.js and modern web applications.">
+    <meta property="og:description"
+        content="Portfolio of Darshan Ajudiya — Frontend Engineer specializing in React, Node.js and modern web applications.">
     <meta property="og:image" content="profile.jpeg">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
 
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -130,6 +134,18 @@
         .field:focus { border-color: #4F46E5; box-shadow: 0 0 0 4px var(--ring); }
         .field.invalid { border-color: #DC2626; }
 
+        /* Marquee */
+        .marquee-track { overflow: hidden; mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); }
+        .marquee-inner { display: flex; width: max-content; animation: marquee 28s linear infinite; }
+        .marquee-inner-rev { display: flex; width: max-content; animation: marquee-rev 28s linear infinite; }
+        .marquee-track:hover .marquee-inner, .marquee-track:hover .marquee-inner-rev { animation-play-state: paused; }
+        @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+        @keyframes marquee-rev { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+        .tech-icon { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 16px 20px; transition: transform .2s ease; }
+        .tech-icon:hover { transform: translateY(-4px); }
+        .tech-icon img { width: 48px; height: 48px; }
+        .tech-icon span { font-size: 11px; font-family: 'JetBrains Mono', monospace; color: var(--text-muted); white-space: nowrap; }
+
         .toast { transform: translateY(140%); transition: transform .35s cubic-bezier(.22,1,.36,1); }
         .toast.show { transform: translateY(0); }
     </style>
@@ -137,26 +153,38 @@
 
 <body class="font-sans">
 
-    <div id="preloader" aria-hidden="true"><div class="loader-ring"></div></div>
+    <div id="preloader" aria-hidden="true">
+        <div class="loader-ring"></div>
+    </div>
     <div id="scroll-progress"></div>
 
     <!-- Skip link -->
-    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:bg-primary focus:text-white focus:px-4 focus:py-2 focus:rounded-lg">Skip to content</a>
+    <a href="#main"
+        class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100] focus:bg-primary focus:text-white focus:px-4 focus:py-2 focus:rounded-lg">Skip
+        to content</a>
 
     <!-- Navigation -->
     <header id="navbar" class="fixed top-0 w-full z-50 py-4 transition-all duration-300">
         <nav class="max-w-content mx-auto px-5 sm:px-8">
             <div class="flex justify-between items-center h-14">
-                <a href="#home" class="font-display font-bold text-lg tracking-tight" aria-label="Darshan Ajudiya, home">
+                <a href="#home" class="font-display font-bold text-lg tracking-tight"
+                    aria-label="Darshan Ajudiya, home">
                     <span class="text-primary">&lt;</span>Darshan<span class="text-primary">/&gt;</span>
                 </a>
 
                 <div class="hidden md:flex items-center gap-1" role="list">
-                    <a href="#about" class="nav-link px-3 py-2 text-sm font-medium text-muted hover:text-inherit">About</a>
-                    <a href="#skills" class="nav-link px-3 py-2 text-sm font-medium text-muted hover:text-inherit">Skills</a>
-                    <a href="#experience" class="nav-link px-3 py-2 text-sm font-medium text-muted hover:text-inherit">Experience</a>
-                    <a href="#projects" class="nav-link px-3 py-2 text-sm font-medium text-muted hover:text-inherit">Projects</a>
-                    <a href="#contact" class="nav-link px-3 py-2 text-sm font-medium text-muted hover:text-inherit">Contact</a>
+                    <a href="#about"
+                        class="nav-link px-3 py-2 text-sm font-medium text-muted hover:text-inherit">About</a>
+                    <a href="#skills"
+                        class="nav-link px-3 py-2 text-sm font-medium text-muted hover:text-inherit">Skills</a>
+                    <a href="#experience"
+                        class="nav-link px-3 py-2 text-sm font-medium text-muted hover:text-inherit">Experience</a>
+                    <a href="#projects"
+                        class="nav-link px-3 py-2 text-sm font-medium text-muted hover:text-inherit">Projects</a>
+                    <a href="#blogs"
+                        class="nav-link px-3 py-2 text-sm font-medium text-muted hover:text-inherit">Blogs</a>
+                    <a href="#contact"
+                        class="nav-link px-3 py-2 text-sm font-medium text-muted hover:text-inherit">Contact</a>
                 </div>
 
                 <div class="flex items-center gap-3">
@@ -164,10 +192,12 @@
                         class="hidden sm:inline-flex items-center gap-2 text-sm font-semibold px-4 py-2.5 rounded-lg bg-primary hover:bg-primary-dark text-white transition-colors">
                         <i class="fas fa-arrow-down text-xs"></i> Resume
                     </a>
-                    <button id="theme-toggle" aria-label="Toggle dark mode" class="w-10 h-10 flex items-center justify-center rounded-lg surface card-hover">
+                    <button id="theme-toggle" aria-label="Toggle dark mode"
+                        class="w-10 h-10 flex items-center justify-center rounded-lg surface card-hover">
                         <i class="fas fa-moon text-xs" id="theme-icon"></i>
                     </button>
-                    <button id="mobile-menu-btn" aria-label="Open menu" aria-expanded="false" class="md:hidden w-10 h-10 flex items-center justify-center rounded-lg surface">
+                    <button id="mobile-menu-btn" aria-label="Open menu" aria-expanded="false"
+                        class="md:hidden w-10 h-10 flex items-center justify-center rounded-lg surface">
                         <i class="fas fa-bars"></i>
                     </button>
                 </div>
@@ -175,13 +205,17 @@
         </nav>
 
         <!-- Mobile menu -->
-        <div id="mobile-menu" class="fixed inset-0 z-40 translate-x-full transition-transform duration-300 md:hidden" style="background-color: var(--bg);">
+        <div id="mobile-menu" class="fixed inset-0 z-40 translate-x-full transition-transform duration-300 md:hidden"
+            style="background-color: var(--bg);">
             <div class="flex flex-col h-full justify-center items-center gap-8 px-6">
-                <button id="close-menu-btn" aria-label="Close menu" class="absolute top-6 right-6 w-10 h-10 rounded-lg surface flex items-center justify-center text-xl"><i class="fas fa-times"></i></button>
+                <button id="close-menu-btn" aria-label="Close menu"
+                    class="absolute top-6 right-6 w-10 h-10 rounded-lg surface flex items-center justify-center text-xl"><i
+                        class="fas fa-times"></i></button>
                 <a href="#about" class="mobile-link text-2xl font-display font-semibold">About</a>
                 <a href="#skills" class="mobile-link text-2xl font-display font-semibold">Skills</a>
                 <a href="#experience" class="mobile-link text-2xl font-display font-semibold">Experience</a>
                 <a href="#projects" class="mobile-link text-2xl font-display font-semibold">Projects</a>
+                <a href="#blogs" class="mobile-link text-2xl font-display font-semibold">Blogs</a>
                 <a href="#contact" class="mobile-link text-2xl font-display font-semibold text-primary">Contact</a>
             </div>
         </div>
@@ -194,38 +228,50 @@
                 <div class="grid md:grid-cols-[1.15fr_0.85fr] gap-16 items-center">
 
                     <div class="space-y-7">
-                        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-token text-xs font-mono text-muted">
+                        <div
+                            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-token text-xs font-mono text-muted">
                             <span class="relative flex h-2 w-2">
-                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal opacity-75"></span>
+                                <span
+                                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal opacity-75"></span>
                                 <span class="relative inline-flex rounded-full h-2 w-2 bg-teal"></span>
                             </span>
                             Available for internships &amp; freelance work
                         </div>
 
                         <h1 class="font-display font-bold text-[2.6rem] leading-[1.08] sm:text-6xl tracking-tight">
-                            Building interfaces that feel<br class="hidden sm:block"> as good as they <span class="text-primary">look.</span>
+                            Full-Stack Engineer.<br class="hidden sm:block"> <span
+                                class="text-primary">Shipping real products.</span>
                         </h1>
 
                         <p class="text-lg text-muted max-w-xl leading-relaxed">
-                            I'm Darshan Ajudiya, a frontend engineer and UI/UX designer focused on React-based
-                            product engineering — from design systems to performant, accessible interfaces
-                            that ship.
+                            I'm <strong class="font-semibold" style="color:var(--text)">Darshan Ajudiya</strong> — a Full-Stack Developer with a focus on Next.js, React and AI/ML integration.
+                            I build scalable, production-grade web applications and ship features that matter.
                         </p>
 
                         <div class="flex flex-wrap gap-4 pt-2">
-                            <a href="#projects" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg bg-primary hover:bg-primary-dark text-white font-semibold transition-colors">
+                            <a href="#projects"
+                                class="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg bg-primary hover:bg-primary-dark text-white font-semibold transition-colors">
                                 View Projects <i class="fas fa-arrow-right text-sm"></i>
                             </a>
-                            <a href="#contact" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg surface card-hover font-semibold">
+                            <a href="#contact"
+                                class="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg surface card-hover font-semibold">
                                 Get in Touch
                             </a>
                         </div>
 
                         <div class="flex items-center gap-5 pt-4 text-muted">
-                            <a href="https://github.com/DarshanAjudiya7" target="_blank" rel="noopener" aria-label="GitHub" class="hover:text-primary transition-colors text-xl"><i class="fab fa-github"></i></a>
-                            <a href="https://x.com/AjudiyaDarshan7" target="_blank" rel="noopener" aria-label="X (Twitter)" class="hover:text-primary transition-colors text-xl"><i class="fab fa-twitter"></i></a>
-                            <a href="https://www.linkedin.com/in/darshan-ajudiya-a5b301310/" target="_blank" rel="noopener" aria-label="LinkedIn" class="hover:text-primary transition-colors text-xl"><i class="fab fa-linkedin"></i></a>
-                            <button id="copy-email-hero" aria-label="Copy email address" class="hover:text-primary transition-colors text-xl"><i class="fas fa-envelope"></i></button>
+                            <a href="https://github.com/DarshanAjudiya7" target="_blank" rel="noopener"
+                                aria-label="GitHub" class="hover:text-primary transition-colors text-xl"><i
+                                    class="fab fa-github"></i></a>
+                            <a href="https://x.com/AjudiyaDarshan7" target="_blank" rel="noopener"
+                                aria-label="X (Twitter)" class="hover:text-primary transition-colors text-xl"><i
+                                    class="fab fa-twitter"></i></a>
+                            <a href="https://www.linkedin.com/in/darshan-ajudiya-a5b301310/" target="_blank"
+                                rel="noopener" aria-label="LinkedIn"
+                                class="hover:text-primary transition-colors text-xl"><i class="fab fa-linkedin"></i></a>
+                            <button id="copy-email-hero" aria-label="Copy email address"
+                                class="hover:text-primary transition-colors text-xl"><i
+                                    class="fas fa-envelope"></i></button>
                         </div>
                     </div>
 
@@ -239,9 +285,9 @@
                             </div>
                             <pre class="font-mono text-[13px] leading-6 overflow-x-auto"><code><span class="text-primary">const</span> developer = {
   name: <span class="text-teal">'Darshan Ajudiya'</span>,
-  role: <span class="text-teal">'Frontend Engineer'</span>,
-  stack: [<span class="text-teal">'React'</span>, <span class="text-teal">'Node.js'</span>, <span class="text-teal">'Next.js'</span>],
-  focus: <span class="text-teal">'DX & performance'</span>,
+  role: <span class="text-teal">'Full-Stack Developer'</span>,
+  stack: [<span class="text-teal">'Next.js'</span>, <span class="text-teal">'React'</span>, <span class="text-teal">'Node.js'</span>, <span class="text-teal">'Python'</span>],
+  focus: <span class="text-teal">'Scalable Web &amp; AI/ML'</span>,
   hireable: <span class="text-primary">true</span>,
 };</code></pre>
                         </div>
@@ -252,11 +298,12 @@
                                 <div class="text-xs text-muted mt-1">Yrs Learning</div>
                             </div>
                             <div class="surface rounded-xl p-4 text-center card-hover">
-                                <div class="font-display font-bold text-2xl counter" data-target="3">0</div>
+                                <div class="font-display font-bold text-2xl counter" data-target="6">0</div>
                                 <div class="text-xs text-muted mt-1">Shipped Projects</div>
                             </div>
                             <div class="surface rounded-xl p-4 text-center card-hover">
-                                <div class="font-display font-bold text-2xl"><span class="counter" data-target="7">0</span>.22</div>
+                                <div class="font-display font-bold text-2xl"><span class="counter"
+                                        data-target="7">0</span>.22</div>
                                 <div class="text-xs text-muted mt-1">CPI</div>
                             </div>
                         </div>
@@ -272,44 +319,52 @@
                 <div class="grid md:grid-cols-2 gap-14 items-start">
                     <div class="reveal">
                         <span class="tag text-primary">01 / ABOUT</span>
-                        <h2 class="font-display font-bold text-3xl md:text-4xl mt-3 mb-6 tracking-tight">A curiosity-led path into engineering</h2>
+                        <h2 class="font-display font-bold text-3xl md:text-4xl mt-3 mb-6 tracking-tight">Engineering solutions,<br>not just code.
+                        </h2>
                         <div class="space-y-4 text-muted leading-relaxed">
-                            <p>I'm currently pursuing a B.Tech in Computer Engineering (2nd year) at Birla
-                                Vishwakarma Mahavidyalaya, Vidyanagar. My interest in software started with a
-                                simple question — how does the internet actually work — and grew into building
-                                full, production-style applications with React and Node.js.</p>
-                            <p>In 2025 I took part in Hacktoberfest, a global open-source event run by
-                                DigitalOcean, and was recognized as a Super Contributor — earning a t-shirt and
-                                a tree planted in my name as part of the program's environmental initiative.</p>
+                            <p>I'm a Computer Engineering undergraduate at Birla Vishwakarma Mahavidyalaya (BVM), Vidyanagar, with a deep passion for Full-Stack Web Development and Artificial Intelligence. Proficient across the modern stack — <strong class="font-medium" style="color:var(--text)">React, Next.js, Node.js, Express, PostgreSQL, MongoDB, and Python</strong> — I focus on building software that is fast, scalable, and built to last.</p>
+                            <p>I've shipped real-world applications ranging from competitive coding platforms and ERP systems to AI-powered solutions. I also completed the <strong class="font-medium" style="color:var(--text)">Qtonz Product Lab 2026 Internship</strong> as an AI/ML intern, where I gained hands-on experience in product development, QA automation research projects in Python, and collaborative software development.</p>
+                            <p>Beyond academics, I actively invest in growth through industry seminars, webinars, internships, and hackathons. In 2025, I participated in <strong class="font-medium" style="color:var(--text)">Hacktoberfest</strong> — a global open-source event by DigitalOcean — and was recognized as a <strong class="font-medium" style="color:var(--text)">Super Contributor</strong>, earning a limited-edition t-shirt and having a tree planted in my name as part of their environmental initiative.</p>
                         </div>
 
                         <div class="grid grid-cols-2 gap-4 mt-8">
                             <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary"><i class="fas fa-code"></i></div>
+                                <div
+                                    class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+                                    <i class="fas fa-code"></i></div>
                                 <span class="font-medium text-sm">Clean, typed code</span>
                             </div>
                             <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary"><i class="fas fa-mobile-screen"></i></div>
-                                <span class="font-medium text-sm">Responsive by default</span>
+                                <div
+                                    class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+                                    <i class="fas fa-brain"></i></div>
+                                <span class="font-medium text-sm">AI / ML curious</span>
                             </div>
                             <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary"><i class="fas fa-gauge-high"></i></div>
-                                <span class="font-medium text-sm">Performance-minded</span>
+                                <div
+                                    class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+                                    <i class="fas fa-trophy"></i></div>
+                                <span class="font-medium text-sm">Hackathon participant</span>
                             </div>
                             <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary"><i class="fas fa-universal-access"></i></div>
-                                <span class="font-medium text-sm">Accessible UI</span>
+                                <div
+                                    class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+                                    <i class="fas fa-rocket"></i></div>
+                                <span class="font-medium text-sm">Shipping products</span>
                             </div>
                         </div>
                     </div>
 
                     <div class="reveal">
                         <div class="relative rounded-2xl overflow-hidden surface p-2">
-                            <img src="profile.jpeg" alt="Portrait of Darshan Ajudiya" class="w-full aspect-[4/5] object-cover rounded-xl">
+                            <img src="projects/profile.jpeg" alt="Portrait of Darshan Ajudiya"
+                                class="w-full aspect-[4/5] object-cover rounded-xl">
                         </div>
 
                         <div class="surface rounded-xl p-5 mt-4 flex items-center gap-4 card-hover">
-                            <div class="w-12 h-12 rounded-lg bg-teal/10 flex items-center justify-center text-teal text-xl flex-shrink-0"><i class="fab fa-digital-ocean"></i></div>
+                            <div
+                                class="w-12 h-12 rounded-lg bg-teal/10 flex items-center justify-center text-teal text-xl flex-shrink-0">
+                                <i class="fab fa-digital-ocean"></i></div>
                             <div>
                                 <p class="font-semibold text-sm">Hacktoberfest 2025 — Super Contributor</p>
                                 <p class="text-xs text-muted">Organized by DigitalOcean · 1 tree planted</p>
@@ -326,41 +381,51 @@
                 <div class="mb-14 reveal">
                     <span class="tag text-primary">02 / SKILLS</span>
                     <h2 class="font-display font-bold text-3xl md:text-4xl mt-3 tracking-tight">Technical toolkit</h2>
+                    <p class="text-muted mt-3 max-w-xl">Technologies I work with daily to build fast, scalable, production-ready applications.</p>
                 </div>
+            </div>
 
-                <div class="grid md:grid-cols-3 gap-6">
-                    <div class="surface rounded-2xl p-6 card-hover reveal">
-                        <h3 class="font-display font-semibold text-lg mb-5 flex items-center gap-2"><i class="fas fa-layer-group text-primary"></i> Frontend</h3>
-                        <div class="space-y-4" data-skill-group>
-                            <div data-skill="HTML / CSS" data-level="95"></div>
-                            <div data-skill="JavaScript (ES6+)" data-level="88"></div>
-                            <div data-skill="React" data-level="90"></div>
-                            <div data-skill="Next.js" data-level="75"></div>
-                            <div data-skill="Tailwind CSS" data-level="92"></div>
-                        </div>
-                    </div>
-
-                    <div class="surface rounded-2xl p-6 card-hover reveal">
-                        <h3 class="font-display font-semibold text-lg mb-5 flex items-center gap-2"><i class="fas fa-server text-primary"></i> Backend &amp; Data</h3>
-                        <div class="space-y-4" data-skill-group>
-                            <div data-skill="Node.js" data-level="80"></div>
-                            <div data-skill="Express" data-level="75"></div>
-                            <div data-skill="Drizzle ORM" data-level="70"></div>
-                            <div data-skill="REST APIs" data-level="82"></div>
-                            <div data-skill="SQL" data-level="68"></div>
-                        </div>
-                    </div>
-
-                    <div class="surface rounded-2xl p-6 card-hover reveal">
-                        <h3 class="font-display font-semibold text-lg mb-5 flex items-center gap-2"><i class="fas fa-toolbox text-primary"></i> Tooling &amp; Workflow</h3>
-                        <div class="space-y-4" data-skill-group>
-                            <div data-skill="Git / GitHub" data-level="90"></div>
-                            <div data-skill="Vite" data-level="85"></div>
-                            <div data-skill="Zustand" data-level="72"></div>
-                            <div data-skill="Figma" data-level="78"></div>
-                            <div data-skill="Vercel Deploys" data-level="88"></div>
-                        </div>
-                    </div>
+            <!-- Row 1 only -->
+            <div class="marquee-track reveal">
+                <div class="marquee-inner">
+                    <!-- set 1 -->
+                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/css3.png" alt="CSS3"><span>CSS3</span></div>
+                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/javascript--v1.png" alt="JavaScript"><span>JavaScript</span></div>
+                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/typescript.png" alt="TypeScript"><span>TypeScript</span></div>
+                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/react-native.png" alt="React"><span>React</span></div>
+                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/nextjs.png" alt="Next.js"><span>Next.js</span></div>
+                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/tailwind_css.png" alt="Tailwind"><span>Tailwind</span></div>
+                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/nodejs.png" alt="Node.js"><span>Node.js</span></div>
+                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/python--v1.png" alt="Python"><span>Python</span></div>
+                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/postgreesql.png" alt="PostgreSQL"><span>PostgreSQL</span></div>
+                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/mongodb.png" alt="MongoDB"><span>MongoDB</span></div>
+                    <div class="tech-icon"><img src="https://avatars.githubusercontent.com/u/108468352?s=48" alt="Drizzle" style="border-radius:8px"><span>Drizzle</span></div>
+                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/git.png" alt="Git"><span>Git</span></div>
+                    <div class="tech-icon"><img src="https://img.icons8.com/ios-glyphs/48/github.png" alt="GitHub" style="filter:invert(var(--github-invert,0))"><span>GitHub</span></div>
+                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/vercel.png" alt="Vercel" style="filter:invert(var(--github-invert,0))"><span>Vercel</span></div>
+                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/docker.png" alt="Docker"><span>Docker</span></div>
+                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/prisma-orm.png" alt="Prisma"><span>Prisma</span></div>
+                    <div class="tech-icon"><img src="https://neon.tech/favicon.ico" alt="Neon" style="border-radius:6px;width:48px;height:48px"><span>Neon</span></div>
+                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/c-programming.png" alt="C"><span>C</span></div>
+                    <!-- set 2 (duplicate for seamless loop) -->
+                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/css3.png" alt="CSS3"><span>CSS3</span></div>
+                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/javascript--v1.png" alt="JavaScript"><span>JavaScript</span></div>
+                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/typescript.png" alt="TypeScript"><span>TypeScript</span></div>
+                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/react-native.png" alt="React"><span>React</span></div>
+                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/nextjs.png" alt="Next.js"><span>Next.js</span></div>
+                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/tailwind_css.png" alt="Tailwind"><span>Tailwind</span></div>
+                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/nodejs.png" alt="Node.js"><span>Node.js</span></div>
+                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/python--v1.png" alt="Python"><span>Python</span></div>
+                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/postgreesql.png" alt="PostgreSQL"><span>PostgreSQL</span></div>
+                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/mongodb.png" alt="MongoDB"><span>MongoDB</span></div>
+                    <div class="tech-icon"><img src="https://avatars.githubusercontent.com/u/108468352?s=48" alt="Drizzle" style="border-radius:8px"><span>Drizzle</span></div>
+                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/git.png" alt="Git"><span>Git</span></div>
+                    <div class="tech-icon"><img src="https://img.icons8.com/ios-glyphs/48/github.png" alt="GitHub" style="filter:invert(var(--github-invert,0))"><span>GitHub</span></div>
+                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/vercel.png" alt="Vercel" style="filter:invert(var(--github-invert,0))"><span>Vercel</span></div>
+                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/docker.png" alt="Docker"><span>Docker</span></div>
+                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/prisma-orm.png" alt="Prisma"><span>Prisma</span></div>
+                    <div class="tech-icon"><img src="https://neon.tech/favicon.ico" alt="Neon" style="border-radius:6px;width:48px;height:48px"><span>Neon</span></div>
+                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/c-programming.png" alt="C"><span>C</span></div>
                 </div>
             </div>
         </section>
@@ -370,29 +435,34 @@
             <div class="max-w-content mx-auto px-5 sm:px-8">
                 <div class="mb-14 reveal">
                     <span class="tag text-primary">03 / TIMELINE</span>
-                    <h2 class="font-display font-bold text-3xl md:text-4xl mt-3 tracking-tight">Education &amp; milestones</h2>
+                    <h2 class="font-display font-bold text-3xl md:text-4xl mt-3 tracking-tight">Education &amp;
+                        milestones</h2>
                 </div>
 
                 <div class="relative pl-8 md:pl-10">
                     <div class="timeline-line absolute left-0 top-1 bottom-1 w-[2px] rounded-full"></div>
 
                     <div class="relative pb-12 reveal">
-                        <div class="absolute -left-[41px] md:-left-[45px] top-1 w-4 h-4 rounded-full bg-primary ring-4" style="--tw-ring-color: var(--bg-soft);"></div>
+                        <div class="absolute -left-[41px] md:-left-[45px] top-1 w-4 h-4 rounded-full bg-primary ring-4"
+                            style="--tw-ring-color: var(--bg-soft);"></div>
                         <div class="surface rounded-2xl p-6 card-hover">
                             <div class="flex flex-wrap items-start justify-between gap-3 mb-2">
                                 <div>
                                     <h3 class="font-display font-bold text-lg">Birla Vishwakarma Mahavidyalaya</h3>
                                     <p class="text-sm text-muted">Vidyanagar, Gujarat</p>
                                 </div>
-                                <span class="tag px-3 py-1 rounded-full bg-primary/10 text-primary">2024 – Present</span>
+                                <span class="tag px-3 py-1 rounded-full bg-primary/10 text-primary">2024</span>
                             </div>
                             <p class="font-semibold text-teal mb-2">B.Tech — Computer Engineering</p>
-                            <span class="tag inline-block px-3 py-1 rounded-full bg-green-500/10 text-green-600 dark:text-green-400 border border-green-500/20">CPI: 7.22</span>
+                            <span
+                                class="tag inline-block px-3 py-1 rounded-full bg-green-500/10 text-green-600 dark:text-green-400 border border-green-500/20">CPI:
+                                7.22</span>
                         </div>
                     </div>
 
                     <div class="relative pb-12 reveal">
-                        <div class="absolute -left-[41px] md:-left-[45px] top-1 w-4 h-4 rounded-full bg-teal ring-4" style="--tw-ring-color: var(--bg-soft);"></div>
+                        <div class="absolute -left-[41px] md:-left-[45px] top-1 w-4 h-4 rounded-full bg-teal ring-4"
+                            style="--tw-ring-color: var(--bg-soft);"></div>
                         <div class="surface rounded-2xl p-6 card-hover">
                             <div class="flex flex-wrap items-start justify-between gap-3 mb-2">
                                 <div>
@@ -402,12 +472,15 @@
                                 <span class="tag px-3 py-1 rounded-full bg-teal/10 text-teal">2022</span>
                             </div>
                             <p class="font-semibold text-primary mb-2">HSC — Science Stream (Group A)</p>
-                            <span class="tag inline-block px-3 py-1 rounded-full bg-yellow-500/10 text-yellow-600 dark:text-yellow-400 border border-yellow-500/20">Percentage: 95.33%</span>
+                            <span
+                                class="tag inline-block px-3 py-1 rounded-full bg-yellow-500/10 text-yellow-600 dark:text-yellow-400 border border-yellow-500/20">Percentage:
+                                95.33%</span>
                         </div>
                     </div>
 
                     <div class="relative reveal">
-                        <div class="absolute -left-[41px] md:-left-[45px] top-1 w-4 h-4 rounded-full bg-primary ring-4" style="--tw-ring-color: var(--bg-soft);"></div>
+                        <div class="absolute -left-[41px] md:-left-[45px] top-1 w-4 h-4 rounded-full bg-primary ring-4"
+                            style="--tw-ring-color: var(--bg-soft);"></div>
                         <div class="surface rounded-2xl p-6 card-hover">
                             <div class="flex flex-wrap items-start justify-between gap-3 mb-2">
                                 <div>
@@ -417,7 +490,8 @@
                                 <span class="tag px-3 py-1 rounded-full bg-primary/10 text-primary">2025</span>
                             </div>
                             <p class="font-semibold text-teal mb-2">Super Contributor Award</p>
-                            <p class="text-sm text-muted">Contributed to open-source repositories globally; earned a limited-edition t-shirt and had a tree planted as part of the program.</p>
+                            <p class="text-sm text-muted">Contributed to open-source repositories globally; earned a
+                                limited-edition t-shirt and had a tree planted as part of the program.</p>
                         </div>
                     </div>
                 </div>
@@ -432,64 +506,81 @@
                         <span class="tag text-primary">04 / PROJECTS</span>
                         <h2 class="font-display font-bold text-3xl md:text-4xl mt-3 tracking-tight">Selected work</h2>
                     </div>
-                    <a href="https://github.com/DarshanAjudiya7" target="_blank" rel="noopener" class="text-sm font-semibold text-muted hover:text-primary flex items-center gap-2 transition-colors">
+                    <a href="https://github.com/DarshanAjudiya7" target="_blank" rel="noopener"
+                        class="text-sm font-semibold text-muted hover:text-primary flex items-center gap-2 transition-colors">
                         All repositories <i class="fab fa-github"></i>
                     </a>
                 </div>
 
-                <div class="flex flex-wrap gap-2 mb-10 reveal" id="project-filters" role="group" aria-label="Filter projects by technology">
-                    <button class="filter-pill active px-4 py-2 rounded-full text-sm font-medium surface" data-filter="all" aria-pressed="true">All</button>
-                    <button class="filter-pill px-4 py-2 rounded-full text-sm font-medium surface" data-filter="react" aria-pressed="false">React</button>
-                    <button class="filter-pill px-4 py-2 rounded-full text-sm font-medium surface" data-filter="node" aria-pressed="false">Node.js</button>
-                    <button class="filter-pill px-4 py-2 rounded-full text-sm font-medium surface" data-filter="ui" aria-pressed="false">UI / Frontend</button>
+                <div class="flex flex-wrap gap-2 mb-10 reveal" id="project-filters" role="group"
+                    aria-label="Filter projects by technology">
+                    <button class="filter-pill active px-4 py-2 rounded-full text-sm font-medium surface"
+                        data-filter="all" aria-pressed="true">All</button>
+                    <button class="filter-pill px-4 py-2 rounded-full text-sm font-medium surface" data-filter="react"
+                        aria-pressed="false">React</button>
+                    <button class="filter-pill px-4 py-2 rounded-full text-sm font-medium surface" data-filter="node"
+                        aria-pressed="false">Node.js</button>
+                    <button class="filter-pill px-4 py-2 rounded-full text-sm font-medium surface" data-filter="ui"
+                        aria-pressed="false">UI / Frontend</button>
                 </div>
 
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="project-grid">
 
-                    <article class="project-card surface rounded-2xl overflow-hidden card-hover reveal" data-tags="react node">
+                    <article class="project-card surface rounded-2xl overflow-hidden card-hover reveal"
+                        data-tags="react node">
                         <div class="aspect-video overflow-hidden border-b border-token">
-                            <img src="project1.jpeg" alt="Screenshot of the Budget Accounting System dashboard" class="w-full h-full object-cover">
+                            <img src="projects/project1.jpeg" alt="Screenshot of the Budget Accounting System dashboard"
+                                class="w-full h-full object-cover">
                         </div>
                         <div class="p-6">
                             <h3 class="font-display font-bold text-lg mb-2">Budget Accounting System</h3>
-                            <p class="text-sm text-muted mb-4 leading-relaxed">A full-stack accounting dashboard for tracking budgets, invoices and transactions with a typed ORM data layer.</p>
+                            <p class="text-sm text-muted mb-4 leading-relaxed">A full-stack accounting dashboard for
+                                tracking budgets, invoices and transactions with a typed ORM data layer.</p>
                             <div class="flex flex-wrap gap-2 mb-5">
                                 <span class="tag px-2 py-1 rounded bg-primary/10 text-primary">Node.js</span>
                                 <span class="tag px-2 py-1 rounded bg-primary/10 text-primary">React</span>
                                 <span class="tag px-2 py-1 rounded bg-primary/10 text-primary">Drizzle ORM</span>
                                 <span class="tag px-2 py-1 rounded bg-primary/10 text-primary">Zustand</span>
                             </div>
-                            <a href="https://shiv-furniture-app.vercel.app/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all">
+                            <a href="https://shiv-furniture-app.vercel.app/" target="_blank" rel="noopener"
+                                class="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all">
                                 View live demo <i class="fas fa-arrow-right text-xs"></i>
                             </a>
                         </div>
                     </article>
 
-                    <article class="project-card surface rounded-2xl overflow-hidden card-hover reveal" data-tags="ui react">
+                    <article class="project-card surface rounded-2xl overflow-hidden card-hover reveal"
+                        data-tags="ui react">
                         <div class="aspect-video overflow-hidden border-b border-token">
-                            <img src="project2.png" alt="Screenshot of the personal portfolio website" class="w-full h-full object-cover">
+                            <img src="projects/project2.png" alt="Screenshot of the personal portfolio website"
+                                class="w-full h-full object-cover">
                         </div>
                         <div class="p-6">
                             <h3 class="font-display font-bold text-lg mb-2">Portfolio Website</h3>
-                            <p class="text-sm text-muted mb-4 leading-relaxed">This site — a hand-built, responsive portfolio focused on clarity, performance and accessible interaction design.</p>
+                            <p class="text-sm text-muted mb-4 leading-relaxed">This site — a hand-built, responsive
+                                portfolio focused on clarity, performance and accessible interaction design.</p>
                             <div class="flex flex-wrap gap-2 mb-5">
                                 <span class="tag px-2 py-1 rounded bg-primary/10 text-primary">HTML5</span>
                                 <span class="tag px-2 py-1 rounded bg-primary/10 text-primary">CSS3</span>
                                 <span class="tag px-2 py-1 rounded bg-primary/10 text-primary">JavaScript</span>
                             </div>
-                            <a href="#home" class="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all">
+                            <a href="#home"
+                                class="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all">
                                 Scroll to top <i class="fas fa-arrow-up text-xs"></i>
                             </a>
                         </div>
                     </article>
 
-                    <article class="project-card surface rounded-2xl overflow-hidden card-hover reveal" data-tags="react ui">
+                    <article class="project-card surface rounded-2xl overflow-hidden card-hover reveal"
+                        data-tags="react ui">
                         <div class="aspect-video overflow-hidden border-b border-token">
-                            <img src="project3.png" alt="Screenshot of the VibeFy music application" class="w-full h-full object-cover">
+                            <img src="projects/project3.png" alt="Screenshot of the VibeFy music application"
+                                class="w-full h-full object-cover">
                         </div>
                         <div class="p-6">
                             <h3 class="font-display font-bold text-lg mb-2">VibeFy</h3>
-                            <p class="text-sm text-muted mb-4 leading-relaxed">A modern music streaming interface with authenticated user sessions and fluid, motion-driven interactions.</p>
+                            <p class="text-sm text-muted mb-4 leading-relaxed">A modern music streaming interface with
+                                authenticated user sessions and fluid, motion-driven interactions.</p>
                             <div class="flex flex-wrap gap-2 mb-5">
                                 <span class="tag px-2 py-1 rounded bg-primary/10 text-primary">React 19</span>
                                 <span class="tag px-2 py-1 rounded bg-primary/10 text-primary">Clerk</span>
@@ -497,7 +588,80 @@
                                 <span class="tag px-2 py-1 rounded bg-primary/10 text-primary">Tailwind</span>
                                 <span class="tag px-2 py-1 rounded bg-primary/10 text-primary">Motion</span>
                             </div>
-                            <a href="https://vibefyweb.vercel.app/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all">
+                            <a href="https://vibefyweb.vercel.app/" target="_blank" rel="noopener"
+                                class="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all">
+                                View live demo <i class="fas fa-arrow-right text-xs"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="project-card surface rounded-2xl overflow-hidden card-hover reveal"
+                        data-tags="react node ui">
+                        <div class="aspect-video overflow-hidden border-b border-token">
+                            <img src="projects/project4.png" alt="Screenshot of AlgoArena — LeetCode Clone"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-display font-bold text-lg mb-2">AlgoArena — LeetCode Clone</h3>
+                            <p class="text-sm text-muted mb-4 leading-relaxed">A full-featured competitive coding
+                                platform with real-time problem solving, leaderboard, submission tracking and a code
+                                editor — inspired by LeetCode.</p>
+                            <div class="flex flex-wrap gap-2 mb-5">
+                                <span class="tag px-2 py-1 rounded bg-primary/10 text-primary">Prisma</span>
+                                <span class="tag px-2 py-1 rounded bg-primary/10 text-primary">Next.js</span>
+                                <span class="tag px-2 py-1 rounded bg-primary/10 text-primary">Neon</span>
+                                <span class="tag px-2 py-1 rounded bg-primary/10 text-primary">Vercel</span>
+                            </div>
+                            <a href="https://leetcode-clone-delta-sepia.vercel.app/" target="_blank" rel="noopener"
+                                class="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all">
+                                View live demo <i class="fas fa-arrow-right text-xs"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="project-card surface rounded-2xl overflow-hidden card-hover reveal"
+                        data-tags="react node ui">
+                        <div class="aspect-video overflow-hidden border-b border-token">
+                            <img src="projects/project5.png" alt="Screenshot of Twitter Clone"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-display font-bold text-lg mb-2">Twitter Clone</h3>
+                            <p class="text-sm text-muted mb-4 leading-relaxed">A full-stack social media platform
+                                replicating core Twitter features — tweets, likes, follows, real-time feed and
+                                authenticated user profiles.</p>
+                            <div class="flex flex-wrap gap-2 mb-5">
+                                <span class="tag px-2 py-1 rounded bg-primary/10 text-primary">Next.js</span>
+                                <span class="tag px-2 py-1 rounded bg-primary/10 text-primary">React</span>
+                                <span class="tag px-2 py-1 rounded bg-primary/10 text-primary">Node.js</span>
+                                <span class="tag px-2 py-1 rounded bg-primary/10 text-primary">Vercel</span>
+                            </div>
+                            <a href="https://twitter-xi-five.vercel.app/" target="_blank" rel="noopener"
+                                class="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all">
+                                View live demo <i class="fas fa-arrow-right text-xs"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="project-card surface rounded-2xl overflow-hidden card-hover reveal"
+                        data-tags="react ui node">
+                        <div class="aspect-video overflow-hidden border-b border-token">
+                            <img src="projects/project6.png" alt="Screenshot of Traveloopl travel app"
+                                class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-display font-bold text-lg mb-2">Traveloopl</h3>
+                            <p class="text-sm text-muted mb-4 leading-relaxed">A modern travel planning web app to
+                                discover destinations, plan trips and explore curated itineraries with a clean,
+                                immersive UI.</p>
+                            <div class="flex flex-wrap gap-2 mb-5">
+                                <span class="tag px-2 py-1 rounded bg-primary/10 text-primary">React</span>
+                                <span class="tag px-2 py-1 rounded bg-primary/10 text-primary">Next.js</span>
+                                <span class="tag px-2 py-1 rounded bg-primary/10 text-primary">Tailwind</span>
+                                <span class="tag px-2 py-1 rounded bg-primary/10 text-primary">Vercel</span>
+                            </div>
+                            <a href="https://traveloopl.vercel.app/" target="_blank" rel="noopener"
+                                class="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:gap-3 transition-all">
                                 View live demo <i class="fas fa-arrow-right text-xs"></i>
                             </a>
                         </div>
@@ -505,7 +669,81 @@
 
                 </div>
 
-                <p id="no-results" class="hidden text-center text-muted py-12">No projects match this filter yet — check back soon.</p>
+                <p id="no-results" class="hidden text-center text-muted py-12">No projects match this filter yet — check
+                    back soon.</p>
+            </div>
+        </section>
+
+        <!-- Blogs -->
+        <section id="blogs" class="py-24">
+            <div class="max-w-content mx-auto px-5 sm:px-8">
+                <div class="flex flex-wrap justify-between items-end gap-6 mb-12 reveal">
+                    <div>
+                        <span class="tag text-primary">05 / BLOGS</span>
+                        <h2 class="font-display font-bold text-3xl md:text-4xl mt-3 tracking-tight">Thoughts & writings
+                        </h2>
+                        <p class="text-muted mt-3 max-w-xl">Sharing what I learn along the way — from frontend
+                            engineering deep-dives to productivity and open-source.</p>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                    <article class="surface rounded-2xl overflow-hidden card-hover reveal flex flex-col">
+                        <div class="p-6 flex flex-col flex-1">
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class="tag px-2 py-1 rounded bg-teal/10 text-teal">React</span>
+                                <span class="tag px-2 py-1 rounded bg-primary/10 text-primary">Frontend</span>
+                            </div>
+                            <h3 class="font-display font-bold text-lg mb-3 leading-snug">Why I moved from Create React
+                                App to Vite — and never looked back</h3>
+                            <p class="text-sm text-muted leading-relaxed flex-1">A hands-on comparison of build times,
+                                DX improvements and ecosystem maturity that made Vite the obvious choice for all my new
+                                projects.</p>
+                            <div class="flex items-center justify-between mt-6 pt-4 border-t border-token">
+                                <span class="text-xs text-muted font-mono">June 2025 · 5 min read</span>
+                                <span class="text-xs text-muted italic">Coming soon</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="surface rounded-2xl overflow-hidden card-hover reveal flex flex-col">
+                        <div class="p-6 flex flex-col flex-1">
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class="tag px-2 py-1 rounded bg-teal/10 text-teal">Open Source</span>
+                                <span class="tag px-2 py-1 rounded bg-primary/10 text-primary">Career</span>
+                            </div>
+                            <h3 class="font-display font-bold text-lg mb-3 leading-snug">My Hacktoberfest 2025 journey:
+                                from first PR to Super Contributor</h3>
+                            <p class="text-sm text-muted leading-relaxed flex-1">How I tackled open-source contributions
+                                for the first time, the repos I contributed to, and what earning the Super Contributor
+                                badge actually felt like.</p>
+                            <div class="flex items-center justify-between mt-6 pt-4 border-t border-token">
+                                <span class="text-xs text-muted font-mono">Nov 2025 · 7 min read</span>
+                                <span class="text-xs text-muted italic">Coming soon</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="surface rounded-2xl overflow-hidden card-hover reveal flex flex-col">
+                        <div class="p-6 flex flex-col flex-1">
+                            <div class="flex items-center gap-2 mb-4">
+                                <span class="tag px-2 py-1 rounded bg-teal/10 text-teal">Node.js</span>
+                                <span class="tag px-2 py-1 rounded bg-primary/10 text-primary">Backend</span>
+                            </div>
+                            <h3 class="font-display font-bold text-lg mb-3 leading-snug">Building type-safe APIs with
+                                Drizzle ORM and Express from scratch</h3>
+                            <p class="text-sm text-muted leading-relaxed flex-1">A walkthrough of the data layer I built
+                                for my Budget Accounting System — schema design, migrations and query patterns that keep
+                                your backend predictable.</p>
+                            <div class="flex items-center justify-between mt-6 pt-4 border-t border-token">
+                                <span class="text-xs text-muted font-mono">Jan 2026 · 8 min read</span>
+                                <span class="text-xs text-muted italic">Coming soon</span>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
             </div>
         </section>
 
@@ -515,27 +753,38 @@
                 <div class="grid md:grid-cols-[0.9fr_1.1fr] gap-12">
 
                     <div class="reveal">
-                        <span class="tag text-primary">05 / CONTACT</span>
-                        <h2 class="font-display font-bold text-3xl md:text-4xl mt-3 mb-4 tracking-tight">Let's build something together</h2>
-                        <p class="text-muted leading-relaxed mb-8">Have a role, project or idea in mind? Send a message and I'll get back to you within a couple of days.</p>
+                        <span class="tag text-primary">06 / CONTACT</span>
+                        <h2 class="font-display font-bold text-3xl md:text-4xl mt-3 mb-4 tracking-tight">Let's build
+                            something together</h2>
+                        <p class="text-muted leading-relaxed mb-8">Have a role, project or idea in mind? Send a message
+                            and I'll get back to you within a couple of days.</p>
 
                         <div class="space-y-4">
-                            <a href="mailto:darshanajudiya07@gmail.com" class="flex items-center gap-4 surface rounded-xl p-4 card-hover">
-                                <div class="w-11 h-11 rounded-lg bg-primary/10 flex items-center justify-center text-primary"><i class="fas fa-envelope"></i></div>
+                            <a href="mailto:darshanajudiya07@gmail.com"
+                                class="flex items-center gap-4 surface rounded-xl p-4 card-hover">
+                                <div
+                                    class="w-11 h-11 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+                                    <i class="fas fa-envelope"></i></div>
                                 <div>
                                     <p class="text-xs text-muted">Email</p>
                                     <p class="font-medium text-sm">darshanajudiya07@gmail.com</p>
                                 </div>
                             </a>
-                            <a href="https://www.linkedin.com/in/darshan-ajudiya-a5b301310/" target="_blank" rel="noopener" class="flex items-center gap-4 surface rounded-xl p-4 card-hover">
-                                <div class="w-11 h-11 rounded-lg bg-primary/10 flex items-center justify-center text-primary"><i class="fab fa-linkedin"></i></div>
+                            <a href="https://www.linkedin.com/in/darshan-ajudiya-a5b301310/" target="_blank"
+                                rel="noopener" class="flex items-center gap-4 surface rounded-xl p-4 card-hover">
+                                <div
+                                    class="w-11 h-11 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+                                    <i class="fab fa-linkedin"></i></div>
                                 <div>
                                     <p class="text-xs text-muted">LinkedIn</p>
                                     <p class="font-medium text-sm">/in/darshan-ajudiya</p>
                                 </div>
                             </a>
-                            <a href="https://github.com/DarshanAjudiya7" target="_blank" rel="noopener" class="flex items-center gap-4 surface rounded-xl p-4 card-hover">
-                                <div class="w-11 h-11 rounded-lg bg-primary/10 flex items-center justify-center text-primary"><i class="fab fa-github"></i></div>
+                            <a href="https://github.com/DarshanAjudiya7" target="_blank" rel="noopener"
+                                class="flex items-center gap-4 surface rounded-xl p-4 card-hover">
+                                <div
+                                    class="w-11 h-11 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+                                    <i class="fab fa-github"></i></div>
                                 <div>
                                     <p class="text-xs text-muted">GitHub</p>
                                     <p class="font-medium text-sm">@DarshanAjudiya7</p>
@@ -548,30 +797,40 @@
                         <div class="grid sm:grid-cols-2 gap-5">
                             <div class="space-y-1.5">
                                 <label for="name" class="text-sm font-medium">Name</label>
-                                <input id="name" name="name" type="text" required class="field w-full rounded-lg px-4 py-3 text-sm transition-all" placeholder="John Doe">
+                                <input id="name" name="name" type="text" required
+                                    class="field w-full rounded-lg px-4 py-3 text-sm transition-all"
+                                    placeholder="John Doe">
                                 <p class="error-msg hidden text-xs text-red-500 mt-1">Please enter your name.</p>
                             </div>
                             <div class="space-y-1.5">
                                 <label for="email" class="text-sm font-medium">Email</label>
-                                <input id="email" name="email" type="email" required class="field w-full rounded-lg px-4 py-3 text-sm transition-all" placeholder="john@example.com">
+                                <input id="email" name="email" type="email" required
+                                    class="field w-full rounded-lg px-4 py-3 text-sm transition-all"
+                                    placeholder="john@example.com">
                                 <p class="error-msg hidden text-xs text-red-500 mt-1">Please enter a valid email.</p>
                             </div>
                         </div>
                         <div class="space-y-1.5">
                             <label for="subject" class="text-sm font-medium">Subject</label>
-                            <input id="subject" name="subject" type="text" required class="field w-full rounded-lg px-4 py-3 text-sm transition-all" placeholder="Project inquiry">
+                            <input id="subject" name="subject" type="text" required
+                                class="field w-full rounded-lg px-4 py-3 text-sm transition-all"
+                                placeholder="Project inquiry">
                             <p class="error-msg hidden text-xs text-red-500 mt-1">Please add a subject.</p>
                         </div>
                         <div class="space-y-1.5">
                             <label for="message" class="text-sm font-medium">Message</label>
-                            <textarea id="message" name="message" rows="5" required class="field w-full rounded-lg px-4 py-3 text-sm transition-all resize-none" placeholder="Tell me about your project..."></textarea>
+                            <textarea id="message" name="message" rows="5" required
+                                class="field w-full rounded-lg px-4 py-3 text-sm transition-all resize-none"
+                                placeholder="Tell me about your project..."></textarea>
                             <p class="error-msg hidden text-xs text-red-500 mt-1">Please write a short message.</p>
                         </div>
-                        <button type="submit" class="w-full bg-primary hover:bg-primary-dark text-white font-semibold py-3.5 rounded-lg transition-colors flex items-center justify-center gap-2">
+                        <button type="submit"
+                            class="w-full bg-primary hover:bg-primary-dark text-white font-semibold py-3.5 rounded-lg transition-colors flex items-center justify-center gap-2">
                             <span id="submit-label">Send Message</span>
                             <i class="fas fa-paper-plane text-sm"></i>
                         </button>
-                        <p class="text-xs text-muted text-center">Submitting opens your email client with the message pre-filled — nothing is sent from this page automatically.</p>
+                        <p class="text-xs text-muted text-center">Submitting opens your email client with the message
+                            pre-filled — nothing is sent from this page automatically.</p>
                     </form>
 
                 </div>
@@ -582,12 +841,17 @@
     <!-- Footer -->
     <footer class="py-10 border-t border-token">
         <div class="max-w-content mx-auto px-5 sm:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
-            <span class="font-display font-bold text-lg"><span class="text-primary">&lt;</span>Darshan<span class="text-primary">/&gt;</span></span>
+            <span class="font-display font-bold text-lg"><span class="text-primary">&lt;</span>Darshan<span
+                    class="text-primary">/&gt;</span></span>
             <p class="text-muted text-sm">© <span id="year"></span> Darshan Ajudiya. All rights reserved.</p>
             <div class="flex gap-5 text-muted">
-                <a href="https://github.com/DarshanAjudiya7" target="_blank" rel="noopener" aria-label="GitHub" class="hover:text-primary transition-colors"><i class="fab fa-github"></i></a>
-                <a href="https://x.com/AjudiyaDarshan7" target="_blank" rel="noopener" aria-label="X" class="hover:text-primary transition-colors"><i class="fab fa-twitter"></i></a>
-                <a href="https://www.linkedin.com/in/darshan-ajudiya-a5b301310/" target="_blank" rel="noopener" aria-label="LinkedIn" class="hover:text-primary transition-colors"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/DarshanAjudiya7" target="_blank" rel="noopener" aria-label="GitHub"
+                    class="hover:text-primary transition-colors"><i class="fab fa-github"></i></a>
+                <a href="https://x.com/AjudiyaDarshan7" target="_blank" rel="noopener" aria-label="X"
+                    class="hover:text-primary transition-colors"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/darshan-ajudiya-a5b301310/" target="_blank" rel="noopener"
+                    aria-label="LinkedIn" class="hover:text-primary transition-colors"><i
+                        class="fab fa-linkedin"></i></a>
             </div>
         </div>
     </footer>
@@ -599,226 +863,227 @@
     </button>
 
     <!-- Toast -->
-    <div id="toast" class="toast fixed bottom-7 left-1/2 -translate-x-1/2 z-50 surface px-5 py-3 rounded-xl shadow-lg text-sm font-medium flex items-center gap-2">
+    <div id="toast"
+        class="toast fixed bottom-7 left-1/2 -translate-x-1/2 z-50 surface px-5 py-3 rounded-xl shadow-lg text-sm font-medium flex items-center gap-2">
         <i class="fas fa-check-circle text-teal"></i> <span id="toast-msg">Copied to clipboard</span>
     </div>
 
     <script>
-        (function () {
-            // ---------- Theme ----------
-            const root = document.documentElement;
-            const themeToggle = document.getElementById('theme-toggle');
-            const themeIcon = document.getElementById('theme-icon');
+            (function () {
+                // ---------- Theme ----------
+                const root = document.documentElement;
+                const themeToggle = document.getElementById('theme-toggle');
+                const themeIcon = document.getElementById('theme-icon');
 
-            function applyTheme(theme) {
-                root.setAttribute('data-theme', theme);
-                themeIcon.className = theme === 'dark' ? 'fas fa-sun text-xs' : 'fas fa-moon text-xs';
-                try { localStorage.setItem('theme', theme); } catch (e) { }
-            }
-
-            let saved = 'light';
-            try { saved = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); } catch (e) { }
-            applyTheme(saved);
-
-            themeToggle.addEventListener('click', () => {
-                const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-                applyTheme(next);
-            });
-
-            // ---------- Preloader ----------
-            window.addEventListener('load', () => {
-                const preloader = document.getElementById('preloader');
-                preloader.style.opacity = '0';
-                setTimeout(() => preloader.style.visibility = 'hidden', 400);
-            });
-
-            // ---------- Scroll progress + navbar + back-to-top ----------
-            const progress = document.getElementById('scroll-progress');
-            const navbar = document.getElementById('navbar');
-            const scrollTopBtn = document.getElementById('scroll-top-btn');
-
-            function onScroll() {
-                const h = document.documentElement;
-                const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
-                progress.style.width = scrolled + '%';
-
-                if (window.scrollY > 40) { navbar.classList.add('glass-nav'); } else { navbar.classList.remove('glass-nav'); }
-
-                if (window.scrollY > 400) {
-                    scrollTopBtn.classList.remove('opacity-0', 'pointer-events-none');
-                } else {
-                    scrollTopBtn.classList.add('opacity-0', 'pointer-events-none');
+                function applyTheme(theme) {
+                    root.setAttribute('data-theme', theme);
+                    themeIcon.className = theme === 'dark' ? 'fas fa-sun text-xs' : 'fas fa-moon text-xs';
+                    try { localStorage.setItem('theme', theme); } catch (e) { }
                 }
-            }
-            document.addEventListener('scroll', onScroll, { passive: true });
-            scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-            // ---------- Mobile menu ----------
-            const mobileBtn = document.getElementById('mobile-menu-btn');
-            const closeBtn = document.getElementById('close-menu-btn');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const mobileLinks = document.querySelectorAll('.mobile-link');
+                let saved = 'light';
+                try { saved = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'); } catch (e) { }
+                applyTheme(saved);
 
-            function toggleMenu() {
-                const isOpen = !mobileMenu.classList.contains('translate-x-full');
-                mobileMenu.classList.toggle('translate-x-full');
-                document.body.style.overflow = isOpen ? 'auto' : 'hidden';
-                mobileBtn.setAttribute('aria-expanded', String(!isOpen));
-            }
-            mobileBtn.addEventListener('click', toggleMenu);
-            closeBtn.addEventListener('click', toggleMenu);
-            mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
-
-            // ---------- Scrollspy ----------
-            const sections = ['about', 'skills', 'experience', 'projects', 'contact'].map(id => document.getElementById(id));
-            const navLinks = document.querySelectorAll('.nav-link');
-
-            const spy = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        navLinks.forEach(l => l.classList.remove('active'));
-                        const active = document.querySelector(`.nav-link[href="#${entry.target.id}"]`);
-                        if (active) active.classList.add('active');
-                    }
+                themeToggle.addEventListener('click', () => {
+                    const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+                    applyTheme(next);
                 });
-            }, { rootMargin: '-45% 0px -50% 0px' });
-            sections.forEach(s => s && spy.observe(s));
 
-            // ---------- Reveal on scroll ----------
-            const revealEls = document.querySelectorAll('.reveal');
-            const revealObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('in-view');
-                        revealObserver.unobserve(entry.target);
-                    }
+                // ---------- Preloader ----------
+                window.addEventListener('load', () => {
+                    const preloader = document.getElementById('preloader');
+                    preloader.style.opacity = '0';
+                    setTimeout(() => preloader.style.visibility = 'hidden', 400);
                 });
-            }, { threshold: 0.15 });
-            revealEls.forEach(el => revealObserver.observe(el));
 
-            // ---------- Counters ----------
-            const counters = document.querySelectorAll('.counter');
-            const counterObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const el = entry.target;
-                        const target = parseInt(el.getAttribute('data-target'), 10);
-                        let current = 0;
-                        const step = Math.max(1, Math.round(target / 30));
-                        const tick = () => {
-                            current += step;
-                            if (current >= target) { el.textContent = target; return; }
-                            el.textContent = current;
-                            requestAnimationFrame(tick);
-                        };
-                        tick();
-                        counterObserver.unobserve(el);
+                // ---------- Scroll progress + navbar + back-to-top ----------
+                const progress = document.getElementById('scroll-progress');
+                const navbar = document.getElementById('navbar');
+                const scrollTopBtn = document.getElementById('scroll-top-btn');
+
+                function onScroll() {
+                    const h = document.documentElement;
+                    const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+                    progress.style.width = scrolled + '%';
+
+                    if (window.scrollY > 40) { navbar.classList.add('glass-nav'); } else { navbar.classList.remove('glass-nav'); }
+
+                    if (window.scrollY > 400) {
+                        scrollTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+                    } else {
+                        scrollTopBtn.classList.add('opacity-0', 'pointer-events-none');
                     }
-                });
-            }, { threshold: 0.5 });
-            counters.forEach(c => counterObserver.observe(c));
+                }
+                document.addEventListener('scroll', onScroll, { passive: true });
+                scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-            // ---------- Skill bars (built from data attributes) ----------
-            document.querySelectorAll('[data-skill]').forEach(row => {
-                const label = row.getAttribute('data-skill');
-                const level = row.getAttribute('data-level');
-                row.innerHTML = `
+                // ---------- Mobile menu ----------
+                const mobileBtn = document.getElementById('mobile-menu-btn');
+                const closeBtn = document.getElementById('close-menu-btn');
+                const mobileMenu = document.getElementById('mobile-menu');
+                const mobileLinks = document.querySelectorAll('.mobile-link');
+
+                function toggleMenu() {
+                    const isOpen = !mobileMenu.classList.contains('translate-x-full');
+                    mobileMenu.classList.toggle('translate-x-full');
+                    document.body.style.overflow = isOpen ? 'auto' : 'hidden';
+                    mobileBtn.setAttribute('aria-expanded', String(!isOpen));
+                }
+                mobileBtn.addEventListener('click', toggleMenu);
+                closeBtn.addEventListener('click', toggleMenu);
+                mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
+
+                // ---------- Scrollspy ----------
+                const sections = ['about', 'skills', 'experience', 'projects', 'blogs', 'contact'].map(id => document.getElementById(id));
+                const navLinks = document.querySelectorAll('.nav-link');
+
+                const spy = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            navLinks.forEach(l => l.classList.remove('active'));
+                            const active = document.querySelector(`.nav-link[href="#${entry.target.id}"]`);
+                            if (active) active.classList.add('active');
+                        }
+                    });
+                }, { rootMargin: '-45% 0px -50% 0px' });
+                sections.forEach(s => s && spy.observe(s));
+
+                // ---------- Reveal on scroll ----------
+                const revealEls = document.querySelectorAll('.reveal');
+                const revealObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('in-view');
+                            revealObserver.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.15 });
+                revealEls.forEach(el => revealObserver.observe(el));
+
+                // ---------- Counters ----------
+                const counters = document.querySelectorAll('.counter');
+                const counterObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const el = entry.target;
+                            const target = parseInt(el.getAttribute('data-target'), 10);
+                            let current = 0;
+                            const step = Math.max(1, Math.round(target / 30));
+                            const tick = () => {
+                                current += step;
+                                if (current >= target) { el.textContent = target; return; }
+                                el.textContent = current;
+                                requestAnimationFrame(tick);
+                            };
+                            tick();
+                            counterObserver.unobserve(el);
+                        }
+                    });
+                }, { threshold: 0.5 });
+                counters.forEach(c => counterObserver.observe(c));
+
+                // ---------- Skill bars (built from data attributes) ----------
+                document.querySelectorAll('[data-skill]').forEach(row => {
+                    const label = row.getAttribute('data-skill');
+                    const level = row.getAttribute('data-level');
+                    row.innerHTML = `
                     <div class="flex justify-between text-sm mb-1.5">
                         <span class="font-medium">${label}</span>
                         <span class="text-muted font-mono text-xs">${level}%</span>
                     </div>
                     <div class="skill-bar-track"><div class="skill-bar-fill" style="width:0%" data-level="${level}"></div></div>
                 `;
-            });
+                });
 
-            const skillObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const fills = entry.target.querySelectorAll('.skill-bar-fill');
-                        fills.forEach(f => f.style.width = f.getAttribute('data-level') + '%');
-                        skillObserver.unobserve(entry.target);
+                const skillObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const fills = entry.target.querySelectorAll('.skill-bar-fill');
+                            fills.forEach(f => f.style.width = f.getAttribute('data-level') + '%');
+                            skillObserver.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.2 });
+                document.querySelectorAll('[data-skill-group]').forEach(g => skillObserver.observe(g));
+
+                // ---------- Project filters ----------
+                const filterBtns = document.querySelectorAll('.filter-pill');
+                const projectCards = document.querySelectorAll('.project-card');
+                const noResults = document.getElementById('no-results');
+
+                filterBtns.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        filterBtns.forEach(b => b.setAttribute('aria-pressed', 'false'));
+                        btn.setAttribute('aria-pressed', 'true');
+                        const filter = btn.getAttribute('data-filter');
+                        let visibleCount = 0;
+
+                        projectCards.forEach(card => {
+                            const tags = card.getAttribute('data-tags');
+                            const match = filter === 'all' || tags.includes(filter);
+                            card.style.display = match ? '' : 'none';
+                            if (match) visibleCount++;
+                        });
+
+                        noResults.classList.toggle('hidden', visibleCount !== 0);
+                    });
+                });
+
+                // ---------- Toast ----------
+                const toast = document.getElementById('toast');
+                const toastMsg = document.getElementById('toast-msg');
+                let toastTimer;
+                function showToast(msg) {
+                    toastMsg.textContent = msg;
+                    toast.classList.add('show');
+                    clearTimeout(toastTimer);
+                    toastTimer = setTimeout(() => toast.classList.remove('show'), 2600);
+                }
+
+                document.getElementById('copy-email-hero').addEventListener('click', async () => {
+                    try {
+                        await navigator.clipboard.writeText('darshanajudiya07@gmail.com');
+                        showToast('Email copied to clipboard');
+                    } catch (e) {
+                        showToast('Email: darshanajudiya07@gmail.com');
                     }
                 });
-            }, { threshold: 0.2 });
-            document.querySelectorAll('[data-skill-group]').forEach(g => skillObserver.observe(g));
 
-            // ---------- Project filters ----------
-            const filterBtns = document.querySelectorAll('.filter-pill');
-            const projectCards = document.querySelectorAll('.project-card');
-            const noResults = document.getElementById('no-results');
+                // ---------- Contact form validation ----------
+                const form = document.getElementById('contact-form');
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    let valid = true;
 
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    filterBtns.forEach(b => b.setAttribute('aria-pressed', 'false'));
-                    btn.setAttribute('aria-pressed', 'true');
-                    const filter = btn.getAttribute('data-filter');
-                    let visibleCount = 0;
-
-                    projectCards.forEach(card => {
-                        const tags = card.getAttribute('data-tags');
-                        const match = filter === 'all' || tags.includes(filter);
-                        card.style.display = match ? '' : 'none';
-                        if (match) visibleCount++;
+                    ['name', 'email', 'subject', 'message'].forEach(id => {
+                        const field = document.getElementById(id);
+                        const errorMsg = field.parentElement.querySelector('.error-msg');
+                        let fieldValid = field.value.trim().length > 1;
+                        if (id === 'email') {
+                            fieldValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value.trim());
+                        }
+                        field.classList.toggle('invalid', !fieldValid);
+                        if (errorMsg) errorMsg.classList.toggle('hidden', fieldValid);
+                        if (!fieldValid) valid = false;
                     });
 
-                    noResults.classList.toggle('hidden', visibleCount !== 0);
-                });
-            });
+                    if (!valid) { showToast('Please fill in all fields correctly'); return; }
 
-            // ---------- Toast ----------
-            const toast = document.getElementById('toast');
-            const toastMsg = document.getElementById('toast-msg');
-            let toastTimer;
-            function showToast(msg) {
-                toastMsg.textContent = msg;
-                toast.classList.add('show');
-                clearTimeout(toastTimer);
-                toastTimer = setTimeout(() => toast.classList.remove('show'), 2600);
-            }
+                    const name = document.getElementById('name').value.trim();
+                    const email = document.getElementById('email').value.trim();
+                    const subject = document.getElementById('subject').value.trim();
+                    const message = document.getElementById('message').value.trim();
 
-            document.getElementById('copy-email-hero').addEventListener('click', async () => {
-                try {
-                    await navigator.clipboard.writeText('darshanajudiya07@gmail.com');
-                    showToast('Email copied to clipboard');
-                } catch (e) {
-                    showToast('Email: darshanajudiya07@gmail.com');
-                }
-            });
-
-            // ---------- Contact form validation ----------
-            const form = document.getElementById('contact-form');
-            form.addEventListener('submit', (e) => {
-                e.preventDefault();
-                let valid = true;
-
-                ['name', 'email', 'subject', 'message'].forEach(id => {
-                    const field = document.getElementById(id);
-                    const errorMsg = field.parentElement.querySelector('.error-msg');
-                    let fieldValid = field.value.trim().length > 1;
-                    if (id === 'email') {
-                        fieldValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value.trim());
-                    }
-                    field.classList.toggle('invalid', !fieldValid);
-                    if (errorMsg) errorMsg.classList.toggle('hidden', fieldValid);
-                    if (!fieldValid) valid = false;
+                    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
+                    const mailto = `mailto:darshanajudiya07@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+                    window.location.href = mailto;
+                    showToast('Opening your email client…');
                 });
 
-                if (!valid) { showToast('Please fill in all fields correctly'); return; }
-
-                const name = document.getElementById('name').value.trim();
-                const email = document.getElementById('email').value.trim();
-                const subject = document.getElementById('subject').value.trim();
-                const message = document.getElementById('message').value.trim();
-
-                const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
-                const mailto = `mailto:darshanajudiya07@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
-                window.location.href = mailto;
-                showToast('Opening your email client…');
-            });
-
-            // ---------- Footer year ----------
-            document.getElementById('year').textContent = new Date().getFullYear();
-        })();
+                // ---------- Footer year ----------
+                document.getElementById('year').textContent = new Date().getFullYear();
+            })();
     </script>
 </body>
 
