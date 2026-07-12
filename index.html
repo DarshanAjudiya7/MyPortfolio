@@ -57,6 +57,31 @@
             --text: #101828;
             --text-muted: #667085;
             --ring: rgba(79, 70, 229, 0.35);
+
+            /* Hero section tokens — light mode */
+            --hero-bg: #f8fafc;
+            --hero-blob1: rgba(79,70,229,0.06);
+            --hero-blob2: rgba(14,165,160,0.04);
+            --hero-heading: #0f172a;
+            --hero-muted: #475569;
+            --hero-badge-bg: rgba(79,70,229,0.07);
+            --hero-badge-border: rgba(79,70,229,0.25);
+            --hero-badge-color: #4338CA;
+            --hero-btn-outline-bg: rgba(0,0,0,0.04);
+            --hero-btn-outline-border: rgba(0,0,0,0.18);
+            --hero-btn-outline-color: #1e293b;
+            --hero-icon-color: #94a3b8;
+            --hero-icon-hover: #4F46E5;
+            --hero-stat-bg: rgba(0,0,0,0.04);
+            --hero-stat-border: rgba(0,0,0,0.09);
+            --hero-stat-num: #0f172a;
+            --hero-stat-label: #64748b;
+            --hero-pill-bg: rgba(0,0,0,0.04);
+            --hero-pill-border: rgba(0,0,0,0.10);
+            --hero-pill-color: #475569;
+            --hero-pill-hover-bg: rgba(79,70,229,0.08);
+            --hero-pill-hover-border: rgba(79,70,229,0.3);
+            --hero-pill-hover-color: #4338CA;
         }
 
         [data-theme="dark"] {
@@ -67,6 +92,31 @@
             --text: #E7EBF3;
             --text-muted: #8A93A6;
             --ring: rgba(99, 102, 241, 0.35);
+
+            /* Hero section tokens — dark mode */
+            --hero-bg: #0a0a0a;
+            --hero-blob1: rgba(79,70,229,0.12);
+            --hero-blob2: rgba(14,165,160,0.07);
+            --hero-heading: #ffffff;
+            --hero-muted: #94a3b8;
+            --hero-badge-bg: rgba(79,70,229,0.08);
+            --hero-badge-border: rgba(79,70,229,0.4);
+            --hero-badge-color: #a5b4fc;
+            --hero-btn-outline-bg: rgba(255,255,255,0.05);
+            --hero-btn-outline-border: rgba(255,255,255,0.2);
+            --hero-btn-outline-color: #e2e8f0;
+            --hero-icon-color: #64748b;
+            --hero-icon-hover: #ffffff;
+            --hero-stat-bg: rgba(255,255,255,0.04);
+            --hero-stat-border: rgba(255,255,255,0.08);
+            --hero-stat-num: #ffffff;
+            --hero-stat-label: #64748b;
+            --hero-pill-bg: rgba(255,255,255,0.05);
+            --hero-pill-border: rgba(255,255,255,0.10);
+            --hero-pill-color: #94a3b8;
+            --hero-pill-hover-bg: rgba(79,70,229,0.12);
+            --hero-pill-hover-border: rgba(79,70,229,0.35);
+            --hero-pill-hover-color: #c7d2fe;
         }
 
         * { scroll-behavior: smooth; }
@@ -148,6 +198,26 @@
 
         .toast { transform: translateY(140%); transition: transform .35s cubic-bezier(.22,1,.36,1); }
         .toast.show { transform: translateY(0); }
+
+        /* ===== HERO SECTION ===== */
+        #home { background-color: var(--hero-bg); transition: background-color .3s ease; }
+        .hero-blob-1 { position:absolute;top:-10%;left:50%;transform:translateX(-50%);width:700px;height:700px;background:radial-gradient(ellipse at center, var(--hero-blob1) 0%, transparent 70%);border-radius:50%;pointer-events:none; }
+        .hero-blob-2 { position:absolute;bottom:-5%;right:10%;width:400px;height:400px;background:radial-gradient(ellipse at center, var(--hero-blob2) 0%, transparent 70%);border-radius:50%;pointer-events:none; }
+        .hero-badge { display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;font-size:12px;font-family:'JetBrains Mono',monospace;background:var(--hero-badge-bg);border:1px solid var(--hero-badge-border);color:var(--hero-badge-color);transition:background .3s,border-color .3s,color .3s; }
+        .hero-heading { color:var(--hero-heading);font-size:clamp(2.4rem,6vw,4.5rem);line-height:1.05;transition:color .3s; }
+        .hero-muted { color:var(--hero-muted);transition:color .3s; }
+        .hero-role-accent { color:#818cf8;font-weight:700; }
+        .hero-btn-outline { border:1.5px solid var(--hero-btn-outline-border);color:var(--hero-btn-outline-color);background:var(--hero-btn-outline-bg);transition:background .3s,border-color .3s,color .3s; }
+        .hero-btn-outline:hover { background:var(--hero-pill-hover-bg);border-color:var(--hero-pill-hover-border);color:var(--hero-pill-hover-color); }
+        .hero-social-icon { color:var(--hero-icon-color);transition:color .25s ease; }
+        .hero-social-icon:hover { color:var(--hero-icon-hover); }
+        .hero-stat { background:var(--hero-stat-bg);border:1px solid var(--hero-stat-border);transition:background .3s,border-color .3s; }
+        .hero-stat-num { color:var(--hero-stat-num);transition:color .3s; }
+        .hero-stat-label { color:var(--hero-stat-label);transition:color .3s; }
+        /* Hero tech pills */
+        .hero-tech-pill { display:inline-flex;align-items:center;gap:8px;padding:8px 18px;margin:0 6px;border-radius:999px;background:var(--hero-pill-bg);border:1px solid var(--hero-pill-border);color:var(--hero-pill-color);font-size:13px;font-family:'JetBrains Mono',monospace;white-space:nowrap;transition:transform .2s ease, background .3s, border-color .3s, color .3s; }
+        .hero-tech-pill:hover { transform:translateY(-3px);background:var(--hero-pill-hover-bg);border-color:var(--hero-pill-hover-border);color:var(--hero-pill-hover-color); }
+        .hero-tech-pill img { width:20px;height:20px; }
     </style>
 </head>
 
@@ -223,94 +293,93 @@
 
     <main id="main">
         <!-- Hero -->
-        <section id="home" class="relative pt-40 pb-24 md:pt-48 md:pb-32 overflow-hidden">
-            <div class="max-w-content mx-auto px-5 sm:px-8">
-                <div class="grid md:grid-cols-[1.15fr_0.85fr] gap-16 items-center">
+        <section id="home" class="relative min-h-screen flex flex-col justify-center overflow-hidden">
 
-                    <div class="space-y-7">
-                        <div
-                            class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-token text-xs font-mono text-muted">
-                            <span class="relative flex h-2 w-2">
-                                <span
-                                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal opacity-75"></span>
-                                <span class="relative inline-flex rounded-full h-2 w-2 bg-teal"></span>
-                            </span>
-                            Available for internships &amp; freelance work
-                        </div>
+            <!-- Subtle background glow blobs -->
+            <div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;overflow:hidden;">
+                <div class="hero-blob-1"></div>
+                <div class="hero-blob-2"></div>
+            </div>
 
-                        <h1 class="font-display font-bold text-[2.6rem] leading-[1.08] sm:text-6xl tracking-tight">
-                            Full-Stack Engineer.<br class="hidden sm:block"> <span
-                                class="text-primary">Shipping real products.</span>
-                        </h1>
+            <div class="max-w-content mx-auto px-5 sm:px-8 w-full pt-32 pb-10 relative z-10">
+                <div class="flex flex-col items-center text-center gap-7">
 
-                        <p class="text-lg text-muted max-w-xl leading-relaxed">
-                            I'm <strong class="font-semibold" style="color:var(--text)">Darshan Ajudiya</strong> — a Full-Stack Developer with a focus on Next.js, React and AI/ML integration.
-                            I build scalable, production-grade web applications and ship features that matter.
-                        </p>
-
-                        <div class="flex flex-wrap gap-4 pt-2">
-                            <a href="#projects"
-                                class="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg bg-primary hover:bg-primary-dark text-white font-semibold transition-colors">
-                                View Projects <i class="fas fa-arrow-right text-sm"></i>
-                            </a>
-                            <a href="#contact"
-                                class="inline-flex items-center gap-2 px-6 py-3.5 rounded-lg surface card-hover font-semibold">
-                                Get in Touch
-                            </a>
-                        </div>
-
-                        <div class="flex items-center gap-5 pt-4 text-muted">
-                            <a href="https://github.com/DarshanAjudiya7" target="_blank" rel="noopener"
-                                aria-label="GitHub" class="hover:text-primary transition-colors text-xl"><i
-                                    class="fab fa-github"></i></a>
-                            <a href="https://x.com/AjudiyaDarshan7" target="_blank" rel="noopener"
-                                aria-label="X (Twitter)" class="hover:text-primary transition-colors text-xl"><i
-                                    class="fab fa-twitter"></i></a>
-                            <a href="https://www.linkedin.com/in/darshan-ajudiya-a5b301310/" target="_blank"
-                                rel="noopener" aria-label="LinkedIn"
-                                class="hover:text-primary transition-colors text-xl"><i class="fab fa-linkedin"></i></a>
-                            <button id="copy-email-hero" aria-label="Copy email address"
-                                class="hover:text-primary transition-colors text-xl"><i
-                                    class="fas fa-envelope"></i></button>
-                        </div>
+                    <!-- Status badge -->
+                    <div class="hero-badge">
+                        <span class="relative flex h-2 w-2">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full opacity-75"
+                                style="background:#0EA5A0;"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2" style="background:#0EA5A0;"></span>
+                        </span>
+                        Available for internships &amp; freelance work
                     </div>
 
-                    <div class="reveal relative">
-                        <div class="surface rounded-2xl p-6 shadow-xl">
-                            <div class="flex items-center gap-2 mb-5">
-                                <div class="w-3 h-3 rounded-full bg-red-400"></div>
-                                <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
-                                <div class="w-3 h-3 rounded-full bg-green-400"></div>
-                                <span class="ml-auto text-xs text-muted font-mono">profile.ts</span>
-                            </div>
-                            <pre class="font-mono text-[13px] leading-6 overflow-x-auto"><code><span class="text-primary">const</span> developer = {
-  name: <span class="text-teal">'Darshan Ajudiya'</span>,
-  role: <span class="text-teal">'Full-Stack Developer'</span>,
-  stack: [<span class="text-teal">'Next.js'</span>, <span class="text-teal">'React'</span>, <span class="text-teal">'Node.js'</span>, <span class="text-teal">'Python'</span>],
-  focus: <span class="text-teal">'Scalable Web &amp; AI/ML'</span>,
-  hireable: <span class="text-primary">true</span>,
-};</code></pre>
-                        </div>
+                    <!-- Main heading -->
+                    <h1 class="hero-heading font-display font-bold tracking-tight">
+                        Hi, I'm <span
+                            style="background:linear-gradient(135deg,#4F46E5,#0EA5A0);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Darshan
+                            Ajudiya</span>
+                    </h1>
 
-                        <div class="grid grid-cols-3 gap-3 mt-5">
-                            <div class="surface rounded-xl p-4 text-center card-hover">
-                                <div class="font-display font-bold text-2xl counter" data-target="2">0</div>
-                                <div class="text-xs text-muted mt-1">Yrs Learning</div>
-                            </div>
-                            <div class="surface rounded-xl p-4 text-center card-hover">
-                                <div class="font-display font-bold text-2xl counter" data-target="6">0</div>
-                                <div class="text-xs text-muted mt-1">Shipped Projects</div>
-                            </div>
-                            <div class="surface rounded-xl p-4 text-center card-hover">
-                                <div class="font-display font-bold text-2xl"><span class="counter"
-                                        data-target="7">0</span>.22</div>
-                                <div class="text-xs text-muted mt-1">CPI</div>
-                            </div>
-                        </div>
+                    <!-- Role subtitle -->
+                    <p class="hero-muted font-display font-semibold text-xl sm:text-2xl">
+                        I'm a <span class="hero-role-accent">Full-Stack Developer</span>
+                    </p>
+
+                    <!-- Description -->
+                    <p class="hero-muted max-w-2xl leading-relaxed text-base sm:text-lg">
+                        I build scalable, production-grade web applications — from competitive coding platforms and ERP
+                        systems to AI-powered products. Focused on Next.js, React, Node.js, and AI/ML integration. From
+                        schema design to deployment, I ship the whole stack.
+                    </p>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-wrap justify-center gap-4 pt-1">
+                        <a href="#projects" id="hero-cta-projects"
+                            class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-white transition-all hover:opacity-90"
+                            style="background:linear-gradient(135deg,#4F46E5,#6366f1);box-shadow:0 0 28px rgba(79,70,229,0.35);">
+                            See My Work <i class="fas fa-arrow-right text-sm"></i>
+                        </a>
+                        <a href="Darshan_Ajudiya_Resume.pdf" download="Darshan_Ajudiya_Resume.pdf" id="hero-cta-resume"
+                            class="hero-btn-outline inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold">
+                            <i class="fas fa-arrow-down text-sm"></i> Download CV
+                        </a>
                     </div>
 
+                    <!-- Social icons -->
+                    <div class="flex items-center gap-6 pt-2">
+                        <a href="https://github.com/DarshanAjudiya7" target="_blank" rel="noopener" aria-label="GitHub"
+                            class="hero-social-icon text-2xl"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/darshan-ajudiya-a5b301310/" target="_blank" rel="noopener"
+                            aria-label="LinkedIn" class="hero-social-icon text-2xl"><i class="fab fa-linkedin"></i></a>
+                        <button id="copy-email-hero" aria-label="Copy email address" class="hero-social-icon text-2xl"
+                            style="background:none;border:none;cursor:pointer;"><i class="fas fa-envelope"></i></button>
+                    </div>
+
+                    <!-- Quick stats -->
+                    <div class="flex flex-wrap justify-center gap-4 pt-4">
+                        <div class="hero-stat px-5 py-3 rounded-2xl text-center">
+                            <div class="hero-stat-num font-display font-bold text-2xl counter" data-target="6">0</div>
+                            <div class="hero-stat-label text-xs mt-1">Shipped Projects</div>
+                        </div>
+                        <div class="hero-stat px-5 py-3 rounded-2xl text-center">
+                            <div class="hero-stat-num font-display font-bold text-2xl counter" data-target="2">0</div>
+                            <div class="hero-stat-label text-xs mt-1">Yrs Learning</div>
+                        </div>
+                        <div class="hero-stat px-5 py-3 rounded-2xl text-center">
+                            <div class="hero-stat-num font-display font-bold text-2xl">7.22</div>
+                            <div class="hero-stat-label text-xs mt-1">CPI</div>
+                        </div>
+                        <div class="hero-stat px-5 py-3 rounded-2xl text-center">
+                            <div class="font-display font-bold text-2xl hero-role-accent">95%</div>
+                            <div class="hero-stat-label text-xs mt-1">HSC Score</div>
+                        </div>
+                    </div>
                 </div>
             </div>
+
+
+
         </section>
 
         <!-- About -->
@@ -319,37 +388,57 @@
                 <div class="grid md:grid-cols-2 gap-14 items-start">
                     <div class="reveal">
                         <span class="tag text-primary">01 / ABOUT</span>
-                        <h2 class="font-display font-bold text-3xl md:text-4xl mt-3 mb-6 tracking-tight">Engineering solutions,<br>not just code.
+                        <h2 class="font-display font-bold text-3xl md:text-4xl mt-3 mb-6 tracking-tight">Engineering
+                            solutions,<br>not just code.
                         </h2>
                         <div class="space-y-4 text-muted leading-relaxed">
-                            <p>I'm a Computer Engineering undergraduate at Birla Vishwakarma Mahavidyalaya (BVM), Vidyanagar, with a deep passion for Full-Stack Web Development and Artificial Intelligence. Proficient across the modern stack — <strong class="font-medium" style="color:var(--text)">React, Next.js, Node.js, Express, PostgreSQL, MongoDB, and Python</strong> — I focus on building software that is fast, scalable, and built to last.</p>
-                            <p>I've shipped real-world applications ranging from competitive coding platforms and ERP systems to AI-powered solutions. I also completed the <strong class="font-medium" style="color:var(--text)">Qtonz Product Lab 2026 Internship</strong> as an AI/ML intern, where I gained hands-on experience in product development, QA automation research projects in Python, and collaborative software development.</p>
-                            <p>Beyond academics, I actively invest in growth through industry seminars, webinars, internships, and hackathons. In 2025, I participated in <strong class="font-medium" style="color:var(--text)">Hacktoberfest</strong> — a global open-source event by DigitalOcean — and was recognized as a <strong class="font-medium" style="color:var(--text)">Super Contributor</strong>, earning a limited-edition t-shirt and having a tree planted in my name as part of their environmental initiative.</p>
+                            <p>I'm a Computer Engineering undergraduate at Birla Vishwakarma Mahavidyalaya (BVM),
+                                Vidyanagar, with a deep passion for Full-Stack Web Development and Artificial
+                                Intelligence. Proficient across the modern stack — <strong class="font-medium"
+                                    style="color:var(--text)">React, Next.js, Node.js, Express, PostgreSQL, MongoDB, and
+                                    Python</strong> — I focus on building software that is fast, scalable, and built to
+                                last.</p>
+                            <p>I've shipped real-world applications ranging from competitive coding platforms and ERP
+                                systems to AI-powered solutions. I also completed the <strong class="font-medium"
+                                    style="color:var(--text)">Qtonz Product Lab 2026 Internship</strong> as an AI/ML
+                                intern, where I gained hands-on experience in product development, QA automation
+                                research projects in Python, and collaborative software development.</p>
+                            <p>Beyond academics, I actively invest in growth through industry seminars, webinars,
+                                internships, and hackathons. In 2025, I participated in <strong class="font-medium"
+                                    style="color:var(--text)">Hacktoberfest</strong> — a global open-source event by
+                                DigitalOcean — and was recognized as a <strong class="font-medium"
+                                    style="color:var(--text)">Super Contributor</strong>, earning a limited-edition
+                                t-shirt and having a tree planted in my name as part of their environmental initiative.
+                            </p>
                         </div>
 
                         <div class="grid grid-cols-2 gap-4 mt-8">
                             <div class="flex items-center gap-3">
                                 <div
                                     class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
-                                    <i class="fas fa-code"></i></div>
+                                    <i class="fas fa-code"></i>
+                                </div>
                                 <span class="font-medium text-sm">Clean, typed code</span>
                             </div>
                             <div class="flex items-center gap-3">
                                 <div
                                     class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
-                                    <i class="fas fa-brain"></i></div>
+                                    <i class="fas fa-brain"></i>
+                                </div>
                                 <span class="font-medium text-sm">AI / ML curious</span>
                             </div>
                             <div class="flex items-center gap-3">
                                 <div
                                     class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
-                                    <i class="fas fa-trophy"></i></div>
+                                    <i class="fas fa-trophy"></i>
+                                </div>
                                 <span class="font-medium text-sm">Hackathon participant</span>
                             </div>
                             <div class="flex items-center gap-3">
                                 <div
                                     class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
-                                    <i class="fas fa-rocket"></i></div>
+                                    <i class="fas fa-rocket"></i>
+                                </div>
                                 <span class="font-medium text-sm">Shipping products</span>
                             </div>
                         </div>
@@ -361,13 +450,28 @@
                                 class="w-full aspect-[4/5] object-cover rounded-xl">
                         </div>
 
-                        <div class="surface rounded-xl p-5 mt-4 flex items-center gap-4 card-hover">
-                            <div
-                                class="w-12 h-12 rounded-lg bg-teal/10 flex items-center justify-center text-teal text-xl flex-shrink-0">
-                                <i class="fab fa-digital-ocean"></i></div>
-                            <div>
-                                <p class="font-semibold text-sm">Hacktoberfest 2025 — Super Contributor</p>
-                                <p class="text-xs text-muted">Organized by DigitalOcean · 1 tree planted</p>
+                        <div class="rounded-xl p-5 mt-4 flex items-center gap-4 card-hover"
+                            style="background:rgba(10,20,35,0.7);border:1px solid rgba(14,165,160,0.35);">
+                            <!-- AI chip icon -->
+                            <div class="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0 text-2xl"
+                                style="background:rgba(14,165,160,0.12);border:1px solid rgba(14,165,160,0.3);color:#0EA5A0;">
+                                <i class="fas fa-microchip"></i>
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <!-- Top row: date | role -->
+                                <div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1.5">
+                                    <!-- <span class="font-bold text-sm" style="color:var(--text);">May 2026 – Jun 2026</span> -->
+                                    <!-- <span class="text-muted text-xs">|</span>/'' -->
+                                    <span class="font-bold text-sm" style="color:#0EA5A0;">Qtonz AI/ML Intern</span>
+                                </div>
+                                <!-- Bottom row: company | location -->
+                                <div class="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-muted">
+                                    <span><i class="fas fa-building mr-1.5 text-[10px]"></i>Qtonz Infosoft Pvt.
+                                        Ltd.</span>
+                                    <span class="opacity-40">|</span>
+                                    <span><i class="fas fa-map-marker-alt mr-1.5 text-[10px]"></i>Rajkot, Gujarat,
+                                        India</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -381,7 +485,8 @@
                 <div class="mb-14 reveal">
                     <span class="tag text-primary">02 / SKILLS</span>
                     <h2 class="font-display font-bold text-3xl md:text-4xl mt-3 tracking-tight">Technical toolkit</h2>
-                    <p class="text-muted mt-3 max-w-xl">Technologies I work with daily to build fast, scalable, production-ready applications.</p>
+                    <p class="text-muted mt-3 max-w-xl">Technologies I work with daily to build fast, scalable,
+                        production-ready applications.</p>
                 </div>
             </div>
 
@@ -389,43 +494,79 @@
             <div class="marquee-track reveal">
                 <div class="marquee-inner">
                     <!-- set 1 -->
-                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/css3.png" alt="CSS3"><span>CSS3</span></div>
-                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/javascript--v1.png" alt="JavaScript"><span>JavaScript</span></div>
-                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/typescript.png" alt="TypeScript"><span>TypeScript</span></div>
-                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/react-native.png" alt="React"><span>React</span></div>
-                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/nextjs.png" alt="Next.js"><span>Next.js</span></div>
-                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/tailwind_css.png" alt="Tailwind"><span>Tailwind</span></div>
-                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/nodejs.png" alt="Node.js"><span>Node.js</span></div>
-                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/python--v1.png" alt="Python"><span>Python</span></div>
-                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/postgreesql.png" alt="PostgreSQL"><span>PostgreSQL</span></div>
-                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/mongodb.png" alt="MongoDB"><span>MongoDB</span></div>
-                    <div class="tech-icon"><img src="https://avatars.githubusercontent.com/u/108468352?s=48" alt="Drizzle" style="border-radius:8px"><span>Drizzle</span></div>
-                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/git.png" alt="Git"><span>Git</span></div>
-                    <div class="tech-icon"><img src="https://img.icons8.com/ios-glyphs/48/github.png" alt="GitHub" style="filter:invert(var(--github-invert,0))"><span>GitHub</span></div>
-                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/vercel.png" alt="Vercel" style="filter:invert(var(--github-invert,0))"><span>Vercel</span></div>
-                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/docker.png" alt="Docker"><span>Docker</span></div>
-                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/prisma-orm.png" alt="Prisma"><span>Prisma</span></div>
-                    <div class="tech-icon"><img src="https://neon.tech/favicon.ico" alt="Neon" style="border-radius:6px;width:48px;height:48px"><span>Neon</span></div>
-                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/c-programming.png" alt="C"><span>C</span></div>
+                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/css3.png"
+                            alt="CSS3"><span>CSS3</span></div>
+                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/javascript--v1.png"
+                            alt="JavaScript"><span>JavaScript</span></div>
+                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/typescript.png"
+                            alt="TypeScript"><span>TypeScript</span></div>
+                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/react-native.png"
+                            alt="React"><span>React</span></div>
+                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/nextjs.png"
+                            alt="Next.js"><span>Next.js</span></div>
+                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/tailwind_css.png"
+                            alt="Tailwind"><span>Tailwind</span></div>
+                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/nodejs.png"
+                            alt="Node.js"><span>Node.js</span></div>
+                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/python--v1.png"
+                            alt="Python"><span>Python</span></div>
+                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/postgreesql.png"
+                            alt="PostgreSQL"><span>PostgreSQL</span></div>
+                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/mongodb.png"
+                            alt="MongoDB"><span>MongoDB</span></div>
+                    <div class="tech-icon"><img src="https://avatars.githubusercontent.com/u/108468352?s=48"
+                            alt="Drizzle" style="border-radius:8px"><span>Drizzle</span></div>
+                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/git.png" alt="Git"><span>Git</span>
+                    </div>
+                    <div class="tech-icon"><img src="https://img.icons8.com/ios-glyphs/48/github.png" alt="GitHub"
+                            style="filter:invert(var(--github-invert,0))"><span>GitHub</span></div>
+                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/vercel.png" alt="Vercel"
+                            style="filter:invert(var(--github-invert,0))"><span>Vercel</span></div>
+                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/docker.png"
+                            alt="Docker"><span>Docker</span></div>
+                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/prisma-orm.png"
+                            alt="Prisma"><span>Prisma</span></div>
+                    <div class="tech-icon"><img src="https://neon.tech/favicon.ico" alt="Neon"
+                            style="border-radius:6px;width:48px;height:48px"><span>Neon</span></div>
+                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/c-programming.png"
+                            alt="C"><span>C</span></div>
                     <!-- set 2 (duplicate for seamless loop) -->
-                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/css3.png" alt="CSS3"><span>CSS3</span></div>
-                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/javascript--v1.png" alt="JavaScript"><span>JavaScript</span></div>
-                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/typescript.png" alt="TypeScript"><span>TypeScript</span></div>
-                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/react-native.png" alt="React"><span>React</span></div>
-                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/nextjs.png" alt="Next.js"><span>Next.js</span></div>
-                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/tailwind_css.png" alt="Tailwind"><span>Tailwind</span></div>
-                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/nodejs.png" alt="Node.js"><span>Node.js</span></div>
-                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/python--v1.png" alt="Python"><span>Python</span></div>
-                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/postgreesql.png" alt="PostgreSQL"><span>PostgreSQL</span></div>
-                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/mongodb.png" alt="MongoDB"><span>MongoDB</span></div>
-                    <div class="tech-icon"><img src="https://avatars.githubusercontent.com/u/108468352?s=48" alt="Drizzle" style="border-radius:8px"><span>Drizzle</span></div>
-                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/git.png" alt="Git"><span>Git</span></div>
-                    <div class="tech-icon"><img src="https://img.icons8.com/ios-glyphs/48/github.png" alt="GitHub" style="filter:invert(var(--github-invert,0))"><span>GitHub</span></div>
-                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/vercel.png" alt="Vercel" style="filter:invert(var(--github-invert,0))"><span>Vercel</span></div>
-                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/docker.png" alt="Docker"><span>Docker</span></div>
-                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/prisma-orm.png" alt="Prisma"><span>Prisma</span></div>
-                    <div class="tech-icon"><img src="https://neon.tech/favicon.ico" alt="Neon" style="border-radius:6px;width:48px;height:48px"><span>Neon</span></div>
-                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/c-programming.png" alt="C"><span>C</span></div>
+                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/css3.png"
+                            alt="CSS3"><span>CSS3</span></div>
+                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/javascript--v1.png"
+                            alt="JavaScript"><span>JavaScript</span></div>
+                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/typescript.png"
+                            alt="TypeScript"><span>TypeScript</span></div>
+                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/react-native.png"
+                            alt="React"><span>React</span></div>
+                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/nextjs.png"
+                            alt="Next.js"><span>Next.js</span></div>
+                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/tailwind_css.png"
+                            alt="Tailwind"><span>Tailwind</span></div>
+                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/nodejs.png"
+                            alt="Node.js"><span>Node.js</span></div>
+                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/python--v1.png"
+                            alt="Python"><span>Python</span></div>
+                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/postgreesql.png"
+                            alt="PostgreSQL"><span>PostgreSQL</span></div>
+                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/mongodb.png"
+                            alt="MongoDB"><span>MongoDB</span></div>
+                    <div class="tech-icon"><img src="https://avatars.githubusercontent.com/u/108468352?s=48"
+                            alt="Drizzle" style="border-radius:8px"><span>Drizzle</span></div>
+                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/git.png" alt="Git"><span>Git</span>
+                    </div>
+                    <div class="tech-icon"><img src="https://img.icons8.com/ios-glyphs/48/github.png" alt="GitHub"
+                            style="filter:invert(var(--github-invert,0))"><span>GitHub</span></div>
+                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/vercel.png" alt="Vercel"
+                            style="filter:invert(var(--github-invert,0))"><span>Vercel</span></div>
+                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/docker.png"
+                            alt="Docker"><span>Docker</span></div>
+                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/prisma-orm.png"
+                            alt="Prisma"><span>Prisma</span></div>
+                    <div class="tech-icon"><img src="https://neon.tech/favicon.ico" alt="Neon"
+                            style="border-radius:6px;width:48px;height:48px"><span>Neon</span></div>
+                    <div class="tech-icon"><img src="https://img.icons8.com/color/48/c-programming.png"
+                            alt="C"><span>C</span></div>
                 </div>
             </div>
         </section>
@@ -433,67 +574,195 @@
         <!-- Experience / Education Timeline -->
         <section id="experience" class="py-24 surface-soft border-y border-token">
             <div class="max-w-content mx-auto px-5 sm:px-8">
-                <div class="mb-14 reveal">
+                <div class="mb-16 reveal">
                     <span class="tag text-primary">03 / TIMELINE</span>
                     <h2 class="font-display font-bold text-3xl md:text-4xl mt-3 tracking-tight">Education &amp;
                         milestones</h2>
+                    <p class="text-muted mt-3 max-w-xl">A journey through learning, achievements, and professional
+                        experience.</p>
                 </div>
 
-                <div class="relative pl-8 md:pl-10">
-                    <div class="timeline-line absolute left-0 top-1 bottom-1 w-[2px] rounded-full"></div>
+                <!-- Timeline wrapper -->
+                <div class="relative">
+                    <!-- Center spine (desktop only) -->
+                    <div
+                        class="hidden md:block absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-[2px] rounded-full timeline-line">
+                    </div>
 
-                    <div class="relative pb-12 reveal">
-                        <div class="absolute -left-[41px] md:-left-[45px] top-1 w-4 h-4 rounded-full bg-primary ring-4"
-                            style="--tw-ring-color: var(--bg-soft);"></div>
-                        <div class="surface rounded-2xl p-6 card-hover">
-                            <div class="flex flex-wrap items-start justify-between gap-3 mb-2">
-                                <div>
-                                    <h3 class="font-display font-bold text-lg">Birla Vishwakarma Mahavidyalaya</h3>
-                                    <p class="text-sm text-muted">Vidyanagar, Gujarat</p>
+                    <!-- ── Card 1: Qtonz Internship (left) ── -->
+                    <div class="relative flex md:justify-start mb-12 reveal">
+                        <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 top-6 w-4 h-4 rounded-full ring-4 z-10"
+                            style="background:#f97316;--tw-ring-color:var(--bg-soft);"></div>
+                        <div class="w-full md:w-[46%]">
+                            <div class="surface rounded-2xl p-6 card-hover">
+                                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-4 text-xs font-mono"
+                                    style="background:rgba(249,115,22,0.1);border:1px solid rgba(249,115,22,0.3);color:#f97316;">
+                                    <i class="far fa-calendar-alt text-xs"></i> May 2026 – Jun 2026
                                 </div>
-                                <span class="tag px-3 py-1 rounded-full bg-primary/10 text-primary">2024</span>
+                                <div class="flex items-start justify-between gap-4 mb-3">
+                                    <div>
+                                        <h3 class="font-display font-bold text-xl leading-tight">Software Engineering Intern</h3>
+                                        <p class="font-semibold mt-1" style="color:#f97316;">Qtonz Product Lab 2026</p>
+                                    </div>
+                                    <div class="w-14 h-14 rounded-xl flex-shrink-0 flex items-center justify-center font-bold text-white text-lg"
+                                        style="background:#1a1a2e;border:1px solid rgba(249,115,22,0.3);letter-spacing:-.5px;">
+                                        <span style="color:#f97316;">Q</span>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col gap-1.5 text-sm text-muted mb-4">
+                                    <span><i class="fas fa-building mr-2 text-xs"></i>Qtonz Infosoft Pvt. Ltd.</span>
+                                    <span><i class="fas fa-map-marker-alt mr-2 text-xs"></i>Rajkot, Gujarat, India</span>
+                                </div>
+                                <hr class="border-token mb-4">
+                                <ul class="space-y-2.5 text-sm text-muted">
+                                    <li class="flex gap-2"><span class="mt-1.5 w-2 h-2 rounded-full flex-shrink-0" style="background:#f97316;"></span>Developed and researched a <strong class="font-medium" style="color:#f97316;">QA Automation System</strong> for Android application testing.</li>
+                                    <li class="flex gap-2"><span class="mt-1.5 w-2 h-2 rounded-full flex-shrink-0" style="background:#f97316;"></span>Worked on <strong class="font-medium" style="color:#f97316;">ADB-based mobile testing</strong>, ad detection (Banner, Native, Interstitial, Reward), and UI hierarchy generation.</li>
+                                    <li class="flex gap-2"><span class="mt-1.5 w-2 h-2 rounded-full flex-shrink-0" style="background:#f97316;"></span>Researched <strong class="font-medium" style="color:#f97316;">device information retrieval</strong> using socket communication and performed permission analysis across multiple devices.</li>
+                                    <li class="flex gap-2"><span class="mt-1.5 w-2 h-2 rounded-full flex-shrink-0" style="background:#f97316;"></span>Implemented <strong class="font-medium" style="color:#f97316;">automated application flow analysis</strong> using Robo Crawling and generated detailed reports.</li>
+                                    <li class="flex gap-2"><span class="mt-1.5 w-2 h-2 rounded-full flex-shrink-0" style="background:#f97316;"></span>Gained hands-on experience in <strong class="font-medium" style="color:#f97316;">QA Automation</strong>, Android Testing, Product Research, and AI-assisted Development.</li>
+                                </ul>
+                                <hr class="border-token mt-4 mb-4">
+                                <p class="text-xs font-mono font-bold mb-3" style="color:#f97316;">TECH STACK</p>
+                                <div class="flex flex-wrap gap-3">
+                                    <div class="flex flex-col items-center gap-1">
+                                        <div class="w-9 h-9 rounded-lg flex items-center justify-center" style="background:rgba(249,115,22,0.08);border:1px solid rgba(249,115,22,0.2);"><img src="https://img.icons8.com/color/32/java-coffee-cup-logo--v1.png" alt="Java" class="w-5 h-5"></div>
+                                        <span class="text-[10px] text-muted font-mono">Java</span>
+                                    </div>
+                                    <div class="flex flex-col items-center gap-1">
+                                        <div class="w-9 h-9 rounded-lg flex items-center justify-center" style="background:rgba(249,115,22,0.08);border:1px solid rgba(249,115,22,0.2);"><img src="https://img.icons8.com/color/32/android-os.png" alt="ADB" class="w-5 h-5"></div>
+                                        <span class="text-[10px] text-muted font-mono">ADB</span>
+                                    </div>
+                                    <div class="flex flex-col items-center gap-1">
+                                        <div class="w-9 h-9 rounded-lg flex items-center justify-center" style="background:rgba(249,115,22,0.08);border:1px solid rgba(249,115,22,0.2);"><img src="https://img.icons8.com/color/32/python--v1.png" alt="Python" class="w-5 h-5"></div>
+                                        <span class="text-[10px] text-muted font-mono">Python</span>
+                                    </div>
+                                    <div class="flex flex-col items-center gap-1">
+                                        <div class="w-9 h-9 rounded-lg flex items-center justify-center" style="background:rgba(249,115,22,0.08);border:1px solid rgba(249,115,22,0.2);"><img src="https://img.icons8.com/color/32/git.png" alt="Git" class="w-5 h-5"></div>
+                                        <span class="text-[10px] text-muted font-mono">Git</span>
+                                    </div>
+                                    <div class="flex flex-col items-center gap-1">
+                                        <div class="w-9 h-9 rounded-lg flex items-center justify-center" style="background:rgba(249,115,22,0.08);border:1px solid rgba(249,115,22,0.2);"><img src="https://img.icons8.com/ios-glyphs/32/github.png" alt="GitHub" style="filter:invert(var(--github-invert,0))" class="w-5 h-5"></div>
+                                        <span class="text-[10px] text-muted font-mono">GitHub</span>
+                                    </div>
+                                    <div class="flex flex-col items-center gap-1">
+                                        <div class="w-9 h-9 rounded-lg flex items-center justify-center text-sm font-bold" style="background:rgba(249,115,22,0.08);border:1px solid rgba(249,115,22,0.2);color:#f97316;">AI</div>
+                                        <span class="text-[10px] text-muted font-mono">AI Tools</span>
+                                    </div>
+                                </div>
                             </div>
-                            <p class="font-semibold text-teal mb-2">B.Tech — Computer Engineering</p>
-                            <span
-                                class="tag inline-block px-3 py-1 rounded-full bg-green-500/10 text-green-600 dark:text-green-400 border border-green-500/20">CPI:
-                                7.22</span>
                         </div>
                     </div>
 
-                    <div class="relative pb-12 reveal">
-                        <div class="absolute -left-[41px] md:-left-[45px] top-1 w-4 h-4 rounded-full bg-teal ring-4"
-                            style="--tw-ring-color: var(--bg-soft);"></div>
-                        <div class="surface rounded-2xl p-6 card-hover">
-                            <div class="flex flex-wrap items-start justify-between gap-3 mb-2">
-                                <div>
-                                    <h3 class="font-display font-bold text-lg">GHSEB Gandhinagar</h3>
-                                    <p class="text-sm text-muted">Gujarat Higher Secondary Education Board</p>
+                    <!-- ── Card 2: Hacktoberfest (right) ── -->
+                    <div class="relative flex md:justify-end mb-12 reveal">
+                        <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 top-6 w-4 h-4 rounded-full bg-primary ring-4 z-10"
+                            style="--tw-ring-color:var(--bg-soft);"></div>
+                        <div class="w-full md:w-[46%]">
+                            <div class="surface rounded-2xl p-6 card-hover">
+                                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-4 text-xs font-mono"
+                                    style="background:rgba(79,70,229,0.1);border:1px solid rgba(79,70,229,0.25);color:#818cf8;">
+                                    <i class="far fa-calendar-alt text-xs"></i> Oct – Nov 2025
                                 </div>
-                                <span class="tag px-3 py-1 rounded-full bg-teal/10 text-teal">2022</span>
+                                <div class="flex items-start justify-between gap-4 mb-3">
+                                    <div>
+                                        <h3 class="font-display font-bold text-xl leading-tight">Super Contributor Award</h3>
+                                        <p class="text-primary font-semibold mt-1">Hacktoberfest 2025</p>
+                                    </div>
+                                    <div class="w-12 h-12 rounded-xl flex-shrink-0 flex items-center justify-center text-2xl"
+                                        style="background:rgba(79,70,229,0.1);">🌍</div>
+                                </div>
+                                <div class="flex flex-col gap-1.5 text-sm text-muted mb-4">
+                                    <span><i class="fas fa-building mr-2 text-xs"></i>Organized by DigitalOcean</span>
+                                    <span><i class="fas fa-globe mr-2 text-xs"></i>Global Open-Source Event</span>
+                                </div>
+                                <hr class="border-token mb-4">
+                                <ul class="space-y-2 text-sm text-muted">
+                                    <li class="flex gap-2"><span class="mt-1.5 w-2 h-2 rounded-full flex-shrink-0" style="background:#4F46E5;"></span>Contributed to open-source repositories globally.</li>
+                                    <li class="flex gap-2"><span class="mt-1.5 w-2 h-2 rounded-full flex-shrink-0" style="background:#4F46E5;"></span>Earned a limited-edition t-shirt and had a tree planted in my name.</li>
+                                    <li class="flex gap-2"><span class="mt-1.5 w-2 h-2 rounded-full flex-shrink-0" style="background:#4F46E5;"></span>Recognized as a <strong class="font-semibold" style="color:var(--text)">Super Contributor</strong> among global participants.</li>
+                                </ul>
+                                <hr class="border-token mt-4 mb-3">
+                                <div class="flex items-center gap-2 flex-wrap">
+                                    <span class="tag px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20">Open Source</span>
+                                    <span class="tag px-3 py-1 rounded-full bg-teal/10 text-teal border border-teal/20">Community</span>
+                                </div>
                             </div>
-                            <p class="font-semibold text-primary mb-2">HSC — Science Stream (Group A)</p>
-                            <span
-                                class="tag inline-block px-3 py-1 rounded-full bg-yellow-500/10 text-yellow-600 dark:text-yellow-400 border border-yellow-500/20">Percentage:
-                                95.33%</span>
                         </div>
                     </div>
 
-                    <div class="relative reveal">
-                        <div class="absolute -left-[41px] md:-left-[45px] top-1 w-4 h-4 rounded-full bg-primary ring-4"
-                            style="--tw-ring-color: var(--bg-soft);"></div>
-                        <div class="surface rounded-2xl p-6 card-hover">
-                            <div class="flex flex-wrap items-start justify-between gap-3 mb-2">
-                                <div>
-                                    <h3 class="font-display font-bold text-lg">Hacktoberfest 2025</h3>
-                                    <p class="text-sm text-muted">Organized by DigitalOcean</p>
+                    <!-- ── Card 3: B.Tech (left) ── -->
+                    <div class="relative flex md:justify-start mb-12 reveal">
+                        <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 top-6 w-4 h-4 rounded-full bg-primary ring-4 z-10"
+                            style="--tw-ring-color:var(--bg-soft);"></div>
+                        <div class="w-full md:w-[46%]">
+                            <div class="surface rounded-2xl p-6 card-hover">
+                                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-4 text-xs font-mono"
+                                    style="background:rgba(79,70,229,0.1);border:1px solid rgba(79,70,229,0.25);color:#818cf8;">
+                                    <i class="far fa-calendar-alt text-xs"></i> 2024 – Present
                                 </div>
-                                <span class="tag px-3 py-1 rounded-full bg-primary/10 text-primary">2025</span>
+                                <div class="flex items-start justify-between gap-4 mb-3">
+                                    <div>
+                                        <h3 class="font-display font-bold text-xl leading-tight">B.Tech — Computer Engineering</h3>
+                                        <p class="text-primary font-semibold mt-1">Birla Vishwakarma Mahavidyalaya</p>
+                                    </div>
+                                    <div class="w-12 h-12 rounded-xl flex-shrink-0 flex items-center justify-center text-2xl"
+                                        style="background:rgba(79,70,229,0.1);">🎓</div>
+                                </div>
+                                <div class="flex flex-col gap-1.5 text-sm text-muted mb-4">
+                                    <span><i class="fas fa-building mr-2 text-xs"></i>Vidyanagar, Gujarat, India</span>
+                                    <span><i class="fas fa-map-marker-alt mr-2 text-xs"></i>Anand, Gujarat</span>
+                                </div>
+                                <hr class="border-token mb-4">
+                                <ul class="space-y-2 text-sm text-muted">
+                                    <li class="flex gap-2"><span class="mt-1.5 w-2 h-2 rounded-full flex-shrink-0" style="background:#4F46E5;"></span>Pursuing Computer Engineering with focus on Full-Stack &amp; AI/ML.</li>
+                                    <li class="flex gap-2"><span class="mt-1.5 w-2 h-2 rounded-full flex-shrink-0" style="background:#4F46E5;"></span>Shipped 6+ production-grade web applications during the degree.</li>
+                                    <li class="flex gap-2"><span class="mt-1.5 w-2 h-2 rounded-full flex-shrink-0" style="background:#4F46E5;"></span>Active in hackathons, webinars, and industry seminars.</li>
+                                </ul>
+                                <hr class="border-token mt-4 mb-3">
+                                <div class="flex items-center gap-2 flex-wrap">
+                                    <span class="text-xs font-mono font-bold text-primary">CPI:</span>
+                                    <span class="tag px-3 py-1 rounded-full bg-green-500/10 text-green-600 border border-green-500/20">7.22</span>
+                                </div>
                             </div>
-                            <p class="font-semibold text-teal mb-2">Super Contributor Award</p>
-                            <p class="text-sm text-muted">Contributed to open-source repositories globally; earned a
-                                limited-edition t-shirt and had a tree planted as part of the program.</p>
                         </div>
                     </div>
+
+                    <!-- ── Card 4: HSC (right) ── -->
+                    <div class="relative flex md:justify-end reveal">
+                        <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 top-6 w-4 h-4 rounded-full bg-teal ring-4 z-10"
+                            style="--tw-ring-color:var(--bg-soft);"></div>
+                        <div class="w-full md:w-[46%]">
+                            <div class="surface rounded-2xl p-6 card-hover">
+                                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-4 text-xs font-mono"
+                                    style="background:rgba(14,165,160,0.1);border:1px solid rgba(14,165,160,0.25);color:#0EA5A0;">
+                                    <i class="far fa-calendar-alt text-xs"></i> 2020 – 2022
+                                </div>
+                                <div class="flex items-start justify-between gap-4 mb-3">
+                                    <div>
+                                        <h3 class="font-display font-bold text-xl leading-tight">HSC — Science Stream (Group A)</h3>
+                                        <p class="font-semibold mt-1" style="color:#0EA5A0;">GHSEB Gandhinagar</p>
+                                    </div>
+                                    <div class="w-12 h-12 rounded-xl flex-shrink-0 flex items-center justify-center text-2xl"
+                                        style="background:rgba(14,165,160,0.1);">📚</div>
+                                </div>
+                                <div class="flex flex-col gap-1.5 text-sm text-muted mb-4">
+                                    <span><i class="fas fa-building mr-2 text-xs"></i>Gujarat Higher Secondary Education Board</span>
+                                    <span><i class="fas fa-map-marker-alt mr-2 text-xs"></i>Gujarat, India</span>
+                                </div>
+                                <hr class="border-token mb-4">
+                                <ul class="space-y-2 text-sm text-muted">
+                                    <li class="flex gap-2"><span class="mt-1.5 w-2 h-2 rounded-full flex-shrink-0" style="background:#0EA5A0;"></span>Science stream with Mathematics, Physics, Chemistry &amp; Biology.</li>
+                                    <li class="flex gap-2"><span class="mt-1.5 w-2 h-2 rounded-full flex-shrink-0" style="background:#0EA5A0;"></span>Developed strong analytical and problem-solving foundation.</li>
+                                </ul>
+                                <hr class="border-token mt-4 mb-3">
+                                <div class="flex items-center gap-2 flex-wrap">
+                                    <span class="text-xs font-mono font-bold" style="color:#0EA5A0;">Score:</span>
+                                    <span class="tag px-3 py-1 rounded-full bg-yellow-500/10 text-yellow-600 border border-yellow-500/20">95.33%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -764,7 +1033,8 @@
                                 class="flex items-center gap-4 surface rounded-xl p-4 card-hover">
                                 <div
                                     class="w-11 h-11 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
-                                    <i class="fas fa-envelope"></i></div>
+                                    <i class="fas fa-envelope"></i>
+                                </div>
                                 <div>
                                     <p class="text-xs text-muted">Email</p>
                                     <p class="font-medium text-sm">darshanajudiya07@gmail.com</p>
@@ -774,7 +1044,8 @@
                                 rel="noopener" class="flex items-center gap-4 surface rounded-xl p-4 card-hover">
                                 <div
                                     class="w-11 h-11 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
-                                    <i class="fab fa-linkedin"></i></div>
+                                    <i class="fab fa-linkedin"></i>
+                                </div>
                                 <div>
                                     <p class="text-xs text-muted">LinkedIn</p>
                                     <p class="font-medium text-sm">/in/darshan-ajudiya</p>
@@ -784,7 +1055,8 @@
                                 class="flex items-center gap-4 surface rounded-xl p-4 card-hover">
                                 <div
                                     class="w-11 h-11 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
-                                    <i class="fab fa-github"></i></div>
+                                    <i class="fab fa-github"></i>
+                                </div>
                                 <div>
                                     <p class="text-xs text-muted">GitHub</p>
                                     <p class="font-medium text-sm">@DarshanAjudiya7</p>
